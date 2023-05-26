@@ -11,3 +11,6 @@ const String handImage = "assets/images/welcome-images/hand.png";
 //Reset Password
 const String eyeImage = "assets/images/welcome-images/eye.png";
 
+//OTP 
+const String catEyeImage = "assets/images/welcome-images/eyeCat.png";
+

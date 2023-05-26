@@ -1,10 +1,12 @@
+import 'package:a_few_words/src/presentation/widgets/form_header_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
+import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
+import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
-import 'signup_footer_widget.dart';
-import 'signup_form_widget.dart';
-import 'signup_header_widget.dart';
+import 'widgets/signup_footer_widget.dart';
+import 'widgets/signup_form_widget.dart';
 
 
 class SignUpPage extends StatelessWidget {
@@ -19,8 +21,13 @@ class SignUpPage extends StatelessWidget {
         padding: EdgeInsets.all(defaultSize),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [ 
-            SignUpHeaderWidget(height: height),
+          children: [
+            FormHeaderWidget(
+              image: handImage,
+              title: signUpTitle,
+              subTitle: signUpSubTitle,
+              imageSize: 0.15,
+            ),
             const SignUpForm(),
             SignUpFooterWidget(),
         

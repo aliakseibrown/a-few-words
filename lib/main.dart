@@ -1,5 +1,4 @@
 import 'package:a_few_words/src/config/themes/app_themes.dart';
-import 'package:a_few_words/wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,7 +6,6 @@ import 'package:get/get.dart';
 import 'src/presentation/authentication/screens/login/login_page.dart';
 import 'src/presentation/authentication/screens/welcome/welcome_page.dart';
 import 'src/presentation/authentication/screens/signup/signup_page.dart';
-import 'src/presentation/authenticationView.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -19,6 +17,7 @@ import 'firebase_options.dart';
 //   );
 //   runApp(MyApp());
 // }
+
 void main() async {
   runApp(const MyApp());
 }
@@ -32,8 +31,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       theme: AppTheme.light,
       initialRoute: '/welcome',
-      defaultTransition: Transition.fadeIn,
-      transitionDuration: const Duration(milliseconds: 200),
+      defaultTransition: Transition.cupertinoDialog,
+      transitionDuration: const Duration(milliseconds: 300),
       getPages: [ //transfer to a appRoute
         GetPage(
           name: '/welcome',

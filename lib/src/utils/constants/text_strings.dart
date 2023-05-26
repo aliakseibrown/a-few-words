@@ -30,9 +30,11 @@ const String signUpWithGoogle = "Sign-up with Google";
 //Reset Password text
 const String forgetPasswordTitle = "Forget Password";
 const String forgetPasswordSubTitle = "Choose available option to reset the password";
-const String resetViaMail = "Reset via Email Verification";
+const String resetViaMail = "Reset via Email";
+const String forgetMailSubTitle = "Enter your email. We will send you a link to reset your password.";
 
-const String forgetMailSubTitle = "Enter your email. We will send a link to reset your password";
-
+//OTP Screen text
+const String verification = "Verification";
+const String enterCode = "Enter the verification code sent at: ";
 
 

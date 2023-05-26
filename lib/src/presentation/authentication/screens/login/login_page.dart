@@ -1,10 +1,12 @@
+import 'package:a_few_words/src/presentation/widgets/form_header_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
+import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
+import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/login_footer_widget.dart';
 import 'widgets/login_form_widget.dart';
-import 'widgets/login_header_widget.dart';
 
 
 class LoginPage extends StatelessWidget {
@@ -12,7 +14,6 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: whiteColor,
       body: Container(
@@ -20,7 +21,11 @@ class LoginPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [ 
-            LoginHeaderWidget(height: height),
+            FormHeaderWidget(
+              image: leafImage,
+              title: loginTitle,
+              subTitle: loginSubTitle,
+            ),
             const LoginForm(),
             LoginFooterWidget(),
         

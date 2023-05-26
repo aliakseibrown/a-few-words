@@ -1,4 +1,5 @@
-import 'package:a_few_words/src/presentation/views/authentication/screens/forget_password/forget_password_options/forget_password_button_widget.dart';
+import 'package:a_few_words/src/presentation/authentication/screens/forget_password/forget_password_options/forget_password_buttom_sheet.dart';
+import 'package:a_few_words/src/presentation/authentication/screens/forget_password/forget_password_options/forget_password_button_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
@@ -44,36 +45,7 @@ class LoginForm extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-                  showModalBottomSheet(
-                    context: context, 
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-                    builder: (context) => Container(
-                      height: 300,
-                      padding: const EdgeInsets.all(defaultSize),
-                      child: Column(
-                        children: [
-                          const Text(forgetPasswordTitle , 
-                            style:TextStyle(
-                              fontWeight: FontWeight.w900,
-                              fontSize: headerText,
-                            ), 
-                          ),
-                          const SizedBox(height: 10,),
-                          const Text(forgetPasswordSubTitle , 
-                            style:TextStyle(
-                              fontWeight: FontWeight.w900,
-                              fontSize: usualText,
-                            ), 
-                          ),
-                          const SizedBox(height: 30,),
-                          forgetPasswordButtonWidget(
-                            btnIcon: Icons.mail_outline_rounded,
-                            title: email, 
-                            subTitle: resetViaMail,
-                            onTap: () {},
-                            ),
-                        ],),
-                    ));
+                  ForgetPasswordPage().buildShowModalBottomSheet(context);
                 },
                 child: Text(forgetPasword),
               ),

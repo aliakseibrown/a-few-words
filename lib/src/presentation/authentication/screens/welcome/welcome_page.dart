@@ -1,5 +1,5 @@
-import 'package:a_few_words/src/presentation/views/authentication/screens/login/login_page.dart';
-import 'package:a_few_words/src/presentation/views/authentication/screens/signup/signup_page.dart';
+import 'package:a_few_words/src/presentation/authentication/screens/login/login_page.dart';
+import 'package:a_few_words/src/presentation/authentication/screens/signup/signup_page.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
