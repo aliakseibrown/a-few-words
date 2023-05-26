@@ -1,5 +1,6 @@
-import 'package:a_few_words/src/presentation/authentication/screens/login/login_page.dart';
-import 'package:a_few_words/src/presentation/authentication/screens/signup/signup_page.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/login/login_page.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/signup/signup_page.dart';
+import 'package:a_few_words/src/presentation/widgets/button_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
@@ -49,7 +50,7 @@ class WelcomePage extends StatelessWidget {
             children:[
               Expanded(
                 child: OutlinedButton(
-                  onPressed: () => Get.to(() => LoginPage()), 
+                  onPressed: () =>Get.toNamed("/login"), 
                   style: OutlinedButton.styleFrom(
                     shape: RoundedRectangleBorder(),
                     foregroundColor: secondaryColor,
@@ -61,19 +62,11 @@ class WelcomePage extends StatelessWidget {
                 ),
               SizedBox(width: 10.0,),
               Expanded(
-                child: ElevatedButton(
-                  onPressed: () => Get.to(() => SignUpPage()), 
-                  style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(),
-                    foregroundColor: whiteColor,
-                    backgroundColor: secondaryColor,
-                    side: BorderSide(color: secondaryColor),
-                    padding: EdgeInsets.symmetric(vertical: buttonHeight),
-                  ),
-                  child: Text(signUp.toUpperCase())
-                  )
-                ),
+                child: ButtonWidget(
+                title: signUp,
+                onPressed: () => Get.toNamed("/signup"),
+                )
+              )
             ] ,
             ),
         ]),

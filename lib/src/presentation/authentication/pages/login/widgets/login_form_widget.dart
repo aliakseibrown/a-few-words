@@ -1,9 +1,11 @@
-import 'package:a_few_words/src/presentation/authentication/screens/forget_password/forget_password_options/forget_password_buttom_sheet.dart';
-import 'package:a_few_words/src/presentation/authentication/screens/forget_password/forget_password_options/forget_password_button_widget.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/forget_password/forget_password_options/forget_password_buttom_sheet.dart';
+import 'package:a_few_words/src/presentation/core/pages/dashboard/dashboard_page.dart';
+import 'package:a_few_words/src/presentation/widgets/button_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -21,7 +23,6 @@ class LoginForm extends StatelessWidget {
             const SizedBox(height: formHeight,),
             TextFormField( 
               decoration: const InputDecoration(
-                //contentPadding: EdgeInsets.only(top: 25),
                 prefixIcon: Icon(Icons.person_outline_outlined),
                 labelText: email,
                 hintText: email,
@@ -54,18 +55,10 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               height: buttonSizeHeight,
               width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(),
-                    foregroundColor: whiteColor,
-                    backgroundColor: secondaryColor,
-                    side: BorderSide(color: secondaryColor),
-                    padding: EdgeInsets.symmetric(vertical: buttonHeight),
-                  ),
-                onPressed: () {},
-                child: Text(login.toUpperCase()),
-              ),
+              child: ButtonWidget(
+                title: login,
+                onPressed: () => Get.toNamed("/dashboard"),
+              )
             )
           ],
         ),

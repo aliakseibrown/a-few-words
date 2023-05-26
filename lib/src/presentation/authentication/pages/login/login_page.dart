@@ -17,18 +17,17 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: whiteColor,
       body: Container(
-        padding: EdgeInsets.all(defaultSize),
+        padding: const EdgeInsets.all(defaultSize),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [ 
+          children: const [ 
             FormHeaderWidget(
               image: leafImage,
               title: loginTitle,
               subTitle: loginSubTitle,
             ),
-            const LoginForm(),
+            LoginForm(),
             LoginFooterWidget(),
-        
         ]),
       ),
     );

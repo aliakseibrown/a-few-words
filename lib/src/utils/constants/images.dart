@@ -14,3 +14,5 @@ const String eyeImage = "assets/images/welcome-images/eye.png";
 //OTP 
 const String catEyeImage = "assets/images/welcome-images/eyeCat.png";
 
+//Dashboard 
+const String plantImage = "assets/images/welcome-images/plant.png";

@@ -1,8 +1,9 @@
 //Generic text
 const String login = "Login";
+const String next = "Next";
 const String signUp = "Sign up";
 const String signIn = "Sign in";
-
+const String check = "Check";
 
 //Welcome Screen text
 const String welcomeTitle = "A Few Words";
@@ -37,4 +38,18 @@ const String forgetMailSubTitle = "Enter your email. We will send you a link to 
 const String verification = "Verification";
 const String enterCode = "Enter the verification code sent at: ";
 
+//Dashboard text
+const String dashboard = "Dashboard";
 
+//Flashcards text
+const String flashcards = "Flashcards";
+const String play = "play";
+
+//Vocabulary text
+const String vocabulary = "Vocabulary";
+
+//Statistic text
+const String statistic = "Statistic";
+
+//Account text
+const String account = "Account";

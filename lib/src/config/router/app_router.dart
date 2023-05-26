@@ -1,13 +1,38 @@
-// //import 'package:auto_route/auto_route.dart';
-// import 'package:flutter/material.dart';
 
-// part 'app_router.gr.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/forget_password/forget_password_mail/forget_password_mail_page.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/forget_password/forget_password_otp/otp_page.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/login/login_page.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/signup/signup_page.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/welcome/welcome_page.dart';
+import 'package:a_few_words/src/presentation/core/pages/dashboard/dashboard_page.dart';
+import 'package:get/get.dart';
 
-// @AdaptiveAutoRouter(
-//   routes: [
-//     AutoRoute(page: AuthenticationView, initial:true),
-//   ],
-// )      
-// class AppRouter extends _$AppRouter {}
-
-// final appRouter = AppRouter();
+List<GetPage<dynamic>> get AppRouter {
+    return [
+      GetPage(
+        name: '/welcome',
+        page: () => WelcomePage(),
+        //binding: AuthenticationBindings(),
+      ),
+      GetPage(
+        name: '/login',
+        page: () => LoginPage(),
+      ),
+      GetPage(
+        name: '/signup',
+        page: () => SignUpPage(),
+      ),
+      GetPage(
+        name: '/forgetmail',
+        page: () => ForgetPasswordMailPage(),
+      ),
+      GetPage(
+        name: '/otp',
+        page: () => OtpPage(),
+      ),
+      GetPage(
+        name: '/dashboard',
+        page: () => DashboardPage(),
+      ),
+    ];
+}

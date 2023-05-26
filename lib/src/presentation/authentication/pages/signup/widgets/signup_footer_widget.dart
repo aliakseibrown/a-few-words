@@ -1,4 +1,4 @@
-import 'package:a_few_words/src/presentation/authentication/screens/signup/signup_page.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/login/login_page.dart';
 import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-class LoginFooterWidget extends StatelessWidget {
-  const LoginFooterWidget({
+class SignUpFooterWidget extends StatelessWidget {
+  const SignUpFooterWidget({
     super.key,
   });
 
@@ -29,14 +29,14 @@ class LoginFooterWidget extends StatelessWidget {
         ),
         const SizedBox(height: formHeight,),
         TextButton(
-          onPressed: () => Get.to(() => SignUpPage()), 
+           onPressed: () => Get.to(() => LoginPage()), 
           child: const Text.rich(
             TextSpan(
-              text: dontHaveAnAccount,
+              text: alreadyHaveAnAccount,
               style: TextStyle(color: Colors.black),
               children: [
                 TextSpan(
-                  text: signUp,
+                  text: login,
                   style: TextStyle(color: Colors.blue)
                 )
               ]

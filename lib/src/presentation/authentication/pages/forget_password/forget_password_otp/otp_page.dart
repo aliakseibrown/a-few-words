@@ -1,5 +1,6 @@
-import 'package:a_few_words/src/presentation/authentication/screens/forget_password/forget_password_options/forget_password_buttom_sheet.dart';
-import 'package:a_few_words/src/presentation/authentication/screens/login/login_page.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/forget_password/forget_password_options/forget_password_buttom_sheet.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/login/login_page.dart';
+import 'package:a_few_words/src/presentation/widgets/button_widget.dart';
 import 'package:a_few_words/src/presentation/widgets/form_header_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/images.dart';
@@ -30,7 +31,7 @@ class OtpPage extends StatelessWidget {
               ),
               const SizedBox(height: defaultSize,),
               OtpTextField(
-                numberOfFields: 6,
+                 numberOfFields: 6,
                 fillColor: Colors.black.withOpacity(0.1),
                 filled: true,
                 keyboardType: TextInputType.number,
@@ -41,17 +42,10 @@ class OtpPage extends StatelessWidget {
               const SizedBox(height: defaultSize,),
               SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  elevation: 0,
-                 shape: RoundedRectangleBorder(),
-                 foregroundColor: whiteColor,
-                 backgroundColor: secondaryColor,
-                 side: BorderSide(color: secondaryColor),
-                 padding: EdgeInsets.symmetric(vertical: buttonHeight),),
-                onPressed: () => Get.to(() => LoginPage()), 
-                child: Text("Next"),
-              ),
+                child: ButtonWidget(
+                title: next,
+                onPressed: () => Get.toNamed("/login"),
+              )
               ),
             ],
           ),

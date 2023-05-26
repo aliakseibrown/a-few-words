@@ -1,4 +1,5 @@
-import 'package:a_few_words/src/presentation/authentication/screens/login/login_page.dart';
+import 'package:a_few_words/src/presentation/authentication/pages/signup/signup_page.dart';
+import 'package:a_few_words/src/presentation/core/pages/dashboard/dashboard_page.dart';
 import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
@@ -6,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-class SignUpFooterWidget extends StatelessWidget {
-  const SignUpFooterWidget({
+class LoginFooterWidget extends StatelessWidget {
+  const LoginFooterWidget({
     super.key,
   });
 
@@ -23,20 +24,20 @@ class SignUpFooterWidget extends StatelessWidget {
           width: double.infinity,
           child: OutlinedButton.icon(
             icon: Image(image: AssetImage(googleImage), width: 20.0),
-            onPressed: () {}, 
+            onPressed: () {},
             label: Text(signInWithGoogle),
             ),
         ),
         const SizedBox(height: formHeight,),
         TextButton(
-           onPressed: () => Get.to(() => LoginPage()), 
+          onPressed: () =>Get.toNamed('/signup'), 
           child: const Text.rich(
             TextSpan(
-              text: alreadyHaveAnAccount,
+              text: dontHaveAnAccount,
               style: TextStyle(color: Colors.black),
               children: [
                 TextSpan(
-                  text: login,
+                  text: signUp,
                   style: TextStyle(color: Colors.blue)
                 )
               ]
