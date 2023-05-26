@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "720089612420",
+    "project_id": "a-few-words",
+    "storage_bucket": "a-few-words.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720089612420:android:f99ccbfe7023e2bbec02d1",
+        "android_client_info": {
+          "package_name": "com.aliakseibrown.afewwords.a_few_words"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720089612420-4aid62bp8dh8tp2n9ir5g81marmpjn49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1rOmBOgfr1oO4zRrpupc6kARfmI9gI8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720089612420-4aid62bp8dh8tp2n9ir5g81marmpjn49.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
