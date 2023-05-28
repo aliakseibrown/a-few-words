@@ -3,16 +3,23 @@ const String welcomeScreenImage = "assets/images/welcome-images/reg.png";
 const String signInScreenImage = "assets/images/welcome-images/plant.png";
 
 //Login Image
-const String googleImage = "assets/images/welcome-images/google.png";
+const String googleImage = "assets/images/login/google.png";
 const String loginImage = "assets/images/welcome-images/login.png";
-const String leafImage = "assets/images/welcome-images/leaf.png";
-const String handImage = "assets/images/welcome-images/hand.png";
+const String leafImage = "assets/images/login/leaf.png";
 
-//Reset Password
-const String eyeImage = "assets/images/welcome-images/eye.png";
+//Sign up
+const String handImage = "assets/images/sign_up/hand.png";
+
+//Forget Password
+const String eyeImage = "assets/images/forget_password/eye.png";
 
 //OTP 
-const String catEyeImage = "assets/images/welcome-images/eyeCat.png";
+const String catEyeImage = "assets/images/forget_password/eyeCat.png";
+//const String catEyeImage = "assets/images/forget_password/catEye.png";
+
 
 //Dashboard 
-const String plantImage = "assets/images/welcome-images/plant.png";
+const String plantImage = "assets/images/dashboard/plant.png";
+
+//Flashcards
+

@@ -1,5 +1,5 @@
 # A Few Words
-An application for learning a new language with a Space Repetition metho. Written on Dart
+An application for learning a new language with a Space Repetition method. Written on Dart.
 "A few words" project is currently under development.
 Following updates will be published in this file.
 

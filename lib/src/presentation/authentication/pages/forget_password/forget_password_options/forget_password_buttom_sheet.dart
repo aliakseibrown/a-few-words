@@ -4,6 +4,7 @@ import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconly/iconly.dart';
 
 class ForgetPasswordPage {
   Future<dynamic> buildShowModalBottomSheet(BuildContext context) {
@@ -30,7 +31,7 @@ class ForgetPasswordPage {
                         ),
                         const SizedBox(height: 30,),
                         forgetPasswordButtonWidget(
-                          btnIcon: Icons.mail_outline_rounded,
+                          btnIcon: IconlyBroken.message,
                           title: email, 
                           subTitle: resetViaMail,
                           onTap: () {

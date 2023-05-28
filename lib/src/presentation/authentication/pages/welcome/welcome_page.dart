@@ -1,6 +1,6 @@
 import 'package:a_few_words/src/presentation/authentication/pages/login/login_page.dart';
 import 'package:a_few_words/src/presentation/authentication/pages/signup/signup_page.dart';
-import 'package:a_few_words/src/presentation/widgets/button_widget.dart';
+import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
@@ -52,7 +52,9 @@ class WelcomePage extends StatelessWidget {
                 child: OutlinedButton(
                   onPressed: () =>Get.toNamed("/login"), 
                   style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      ),
                     foregroundColor: secondaryColor,
                     side: BorderSide(color: secondaryColor),
                     padding: EdgeInsets.symmetric(vertical: buttonHeight),
@@ -62,7 +64,7 @@ class WelcomePage extends StatelessWidget {
                 ),
               SizedBox(width: 10.0,),
               Expanded(
-                child: ButtonWidget(
+                child: FilledButtonWidget(
                 title: signUp,
                 onPressed: () => Get.toNamed("/signup"),
                 )

@@ -5,6 +5,7 @@ const String signUp = "Sign up";
 const String signIn = "Sign in";
 const String check = "Check";
 
+////  AUTHENTICATION
 //Welcome Screen text
 const String welcomeTitle = "A Few Words";
 const String welcomeSubTitle = "Learn a new language only in 15 min per day.";
@@ -38,18 +39,29 @@ const String forgetMailSubTitle = "Enter your email. We will send you a link to 
 const String verification = "Verification";
 const String enterCode = "Enter the verification code sent at: ";
 
-//Dashboard text
+
+
+////CORE
+//Navigation Bar
+const String stats = "Stats";
+const String settings = "Settings";
+const String review = "Review";
+const String home = "Home";
+
+
+//Dashboard Page
 const String dashboard = "Dashboard";
 
-//Flashcards text
+//Flashcards Page
 const String flashcards = "Flashcards";
 const String play = "play";
 
-//Vocabulary text
+//Vocabulary Page
 const String vocabulary = "Vocabulary";
 
-//Statistic text
+//Statistic Page
 const String statistic = "Statistic";
 
-//Account text
+//Account Page
 const String account = "Account";
+

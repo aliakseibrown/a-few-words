@@ -1,13 +1,11 @@
-import 'package:a_few_words/src/presentation/authentication/pages/login/login_page.dart';
-import 'package:a_few_words/src/presentation/core/pages/home_bar/dashboard_navigator_bar.dart';
-import 'package:a_few_words/src/presentation/widgets/button_widget.dart';
+import 'package:a_few_words/src/presentation/core/pages/home_bar/widgets/centered_navigation_button.dart';
+import 'package:a_few_words/src/presentation/core/pages/home_bar/custom_navigation_bar.dart';
+import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
 import 'package:a_few_words/src/presentation/widgets/form_header_widget.dart';
-import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -31,7 +29,7 @@ class DashboardPage extends StatelessWidget {
               const SizedBox(height: defaultSize,),
               SizedBox(
                 width: double.infinity,
-                child: ButtonWidget(
+                child: FilledButtonWidget(
                 title: check,
                 onPressed: () => Get.toNamed("/login"),
               )
@@ -40,7 +38,9 @@ class DashboardPage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: DashboardNavigatorBar(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: const CenteredNavigationButton(),
+      bottomNavigationBar: CustomNavigationBar(),
     );
   }
 }

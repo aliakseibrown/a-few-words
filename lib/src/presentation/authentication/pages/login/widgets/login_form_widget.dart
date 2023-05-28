@@ -1,11 +1,12 @@
 import 'package:a_few_words/src/presentation/authentication/pages/forget_password/forget_password_options/forget_password_buttom_sheet.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/dashboard_page.dart';
-import 'package:a_few_words/src/presentation/widgets/button_widget.dart';
+import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconly/iconly.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -23,7 +24,7 @@ class LoginForm extends StatelessWidget {
             const SizedBox(height: formHeight,),
             TextFormField( 
               decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.person_outline_outlined),
+                prefixIcon: Icon(IconlyBroken.profile),
                 labelText: email,
                 hintText: email,
                 border: OutlineInputBorder()
@@ -32,13 +33,13 @@ class LoginForm extends StatelessWidget {
             const SizedBox(height: formHeight,),
             TextFormField( 
               decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.fingerprint),
+                prefixIcon: Icon(IconlyBroken.password),
                 labelText: password,
                 hintText: password,
                 border: OutlineInputBorder(),
                 suffixIcon: IconButton(
                   onPressed: null, 
-                  icon: Icon(Icons.remove_red_eye_sharp)),
+                  icon: Icon(IconlyBroken.show)),
               ),
             ),
             const SizedBox(height: formHeight,),
@@ -55,7 +56,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               height: buttonSizeHeight,
               width: double.infinity,
-              child: ButtonWidget(
+              child: FilledButtonWidget(
                 title: login,
                 onPressed: () => Get.toNamed("/dashboard"),
               )

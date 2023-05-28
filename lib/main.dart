@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       theme: AppTheme.light,
       initialRoute: '/welcome',
-      defaultTransition: Transition.cupertinoDialog,
+      defaultTransition: Transition.cupertino,
       transitionDuration: const Duration(milliseconds: 300),
       getPages: AppRouter,
     );

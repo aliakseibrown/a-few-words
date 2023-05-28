@@ -1,11 +1,11 @@
-import 'package:a_few_words/src/presentation/authentication/pages/forget_password/forget_password_otp/otp_page.dart';
-import 'package:a_few_words/src/presentation/widgets/button_widget.dart';
+import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
 import 'package:a_few_words/src/presentation/widgets/form_header_widget.dart';
 import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconly/iconly.dart';
 
 class ForgetPasswordMailPage extends StatelessWidget {
   ForgetPasswordMailPage({super.key});
@@ -34,13 +34,13 @@ class ForgetPasswordMailPage extends StatelessWidget {
                         border: OutlineInputBorder(),
                         label: Text(email),
                         hintText: email,
-                        prefixIcon: Icon(Icons.mail_outline_rounded),
+                        prefixIcon: Icon(IconlyBroken.message),
                       ),
                     ),
                     SizedBox(height: defaultSize-10,),
                     SizedBox(
                       width: double.infinity,
-                      child: ButtonWidget(
+                      child: FilledButtonWidget(
                         title: "NEXT",
                         onPressed: () => Get.toNamed("/otp"),
                       ),

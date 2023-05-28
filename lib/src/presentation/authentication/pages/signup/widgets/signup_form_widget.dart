@@ -1,7 +1,10 @@
+import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:iconly/iconly.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({
@@ -19,7 +22,7 @@ class SignUpForm extends StatelessWidget {
             const SizedBox(height: formHeight,),
             TextFormField( 
               decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.person_outline_outlined),
+                prefixIcon: Icon(IconlyBroken.profile),
                 labelText: name,
                 hintText: name,
                 border: OutlineInputBorder(),
@@ -29,7 +32,7 @@ class SignUpForm extends StatelessWidget {
             TextFormField( 
               decoration: const InputDecoration(
                 //contentPadding: EdgeInsets.only(top: 25),
-                prefixIcon: Icon(Icons.mail_outline_outlined),
+                prefixIcon: Icon(IconlyBroken.message),
                 labelText: email,
                 hintText: email,
                 border: OutlineInputBorder()
@@ -38,25 +41,25 @@ class SignUpForm extends StatelessWidget {
             const SizedBox(height: formHeight,),
             TextFormField( 
               decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.fingerprint),
+                prefixIcon: Icon(IconlyBroken.password),
                 labelText: password,
                 hintText: password,
                 border: OutlineInputBorder(),
                 suffixIcon: IconButton(
                   onPressed: null, 
-                  icon: Icon(Icons.remove_red_eye_sharp)),
+                  icon: Icon(IconlyBroken.show)),
               ),
             ),
             const SizedBox(height: formHeight,),
             TextFormField( 
               decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.fingerprint),
+                prefixIcon: Icon(IconlyBroken.password),
                 labelText: repeatThePassword,
                 hintText: repeatThePassword,
                 border: OutlineInputBorder(),
                 suffixIcon: IconButton(
                   onPressed: null, 
-                  icon: Icon(Icons.remove_red_eye_sharp)),
+                  icon: Icon(IconlyBroken.show)),
               ),
             ),
             const SizedBox(height: formHeight,),
@@ -64,18 +67,10 @@ class SignUpForm extends StatelessWidget {
             SizedBox(
               height: buttonSizeHeight,
               width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(),
-                    foregroundColor: whiteColor,
-                    backgroundColor: secondaryColor,
-                    side: BorderSide(color: secondaryColor),
-                    padding: EdgeInsets.symmetric(vertical: buttonHeight),
-                  ),
-                onPressed: () {},
-                child: Text(signUp.toUpperCase()),
-              ),
+              child: FilledButtonWidget(
+                title: signUp,
+                onPressed: () => Get.toNamed("/signup"),
+                )
             )
           ],
         ),

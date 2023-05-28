@@ -22,6 +22,12 @@ class SignUpFooterWidget extends StatelessWidget {
           height: buttonSizeHeight,
           width: double.infinity,
           child: OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      ),
+                    padding: EdgeInsets.symmetric(vertical: buttonHeight),
+                  ),
             icon: Image(image: AssetImage(googleImage), width: 20.0),
             onPressed: () {}, 
             label: Text(signInWithGoogle),

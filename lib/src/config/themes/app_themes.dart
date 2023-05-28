@@ -11,7 +11,7 @@ abstract class AppTheme {
       scaffoldBackgroundColor: Colors.white,
       primaryColor: primaryColor,
       splashColor: Colors.transparent,
-      fontFamily: 'RobotoMono',
+      fontFamily: 'RaleWay',
       colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.black),
     );
   }
