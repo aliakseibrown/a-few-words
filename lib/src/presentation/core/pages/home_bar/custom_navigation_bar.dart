@@ -15,9 +15,9 @@ class CustomNavigationBar extends StatelessWidget {
     return BottomAppBar(
       notchMargin: 10.0,
       shape: const CircularNotchedRectangle(),
-      color: secondaryColor,
+      color: whiteColor,
       child: Container(
-        padding: EdgeInsets.fromLTRB(15,5, 4, 10),
+        padding: const EdgeInsets.fromLTRB(15,5, 4, 10),
         height: 60.0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -19,7 +19,7 @@ class FilledButtonWidget extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(borderRadConst),
         ),
         foregroundColor: whiteColor,
         backgroundColor: secondaryColor,

@@ -17,6 +17,7 @@ class FlashcardsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(defaultSize),
@@ -44,7 +45,7 @@ class FlashcardsPage extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: const CenteredNavigationButton(),
-      bottomNavigationBar: CustomNavigationBar(),    
+      bottomNavigationBar: const CustomNavigationBar(),    
       );
   }
 }

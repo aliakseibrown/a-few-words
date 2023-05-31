@@ -31,12 +31,12 @@ class FormHeaderWidget extends StatelessWidget {
     children: [
       Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+        padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
         child: Image(image: AssetImage(image), color: imageColor, height: height * imageSize),
       ),
       Text(title, 
         style:
-         TextStyle(
+         const TextStyle(
           fontWeight: FontWeight.w700,
           fontSize: headerText,
         ),
@@ -44,7 +44,7 @@ class FormHeaderWidget extends StatelessWidget {
       ),
       Text(subTitle,  
         style:
-         TextStyle(
+         const TextStyle(
           fontWeight: FontWeight.w900,
           fontSize: usualText,
         ), 

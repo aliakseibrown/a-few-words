@@ -51,6 +51,9 @@ const String home = "Home";
 
 //Dashboard Page
 const String dashboard = "Dashboard";
+const String hiuser = "Hello, Alex";
+const String currentLanguage = "EN";
+const String yourstats = "Statistics";
 
 //Flashcards Page
 const String flashcards = "Flashcards";

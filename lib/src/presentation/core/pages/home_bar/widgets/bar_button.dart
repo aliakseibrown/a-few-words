@@ -24,7 +24,7 @@ class BarButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           elevation: 0.0,
-          backgroundColor: secondaryColor,
+          backgroundColor: whiteColor,
           shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
           ),
@@ -35,13 +35,13 @@ class BarButton extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: whiteColor,
+              color: secondaryColor,
               ),
             Text(
               text,
               style: TextStyle(
-                color: whiteColor,
-                //fontSize: 13.0,
+                color: secondaryColor,
+                fontSize: 13.0,
               ),
             ),
           ],
