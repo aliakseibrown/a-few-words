@@ -11,4 +11,9 @@ const borderRadConst = 20.0;
 //Dashboard
 const dashboardPadding = 20.0;
 const dashboardCardPadding = 10.0;
+const dashboardBox = 18.0;
 
+//Flashcards
+const translationSize = 20.0;
+const sentenceSize = 20.0;
+const scaleSize = 10.0;

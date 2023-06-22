@@ -7,11 +7,19 @@ import 'package:get/get.dart';
 class FilledButtonWidget extends StatelessWidget {
   FilledButtonWidget({
     super.key,
+    this.color = secondaryColor,
+    this.colorText = whiteColor,
+    this.colorBorder = secondaryColor,
     required this.onPressed,
     required this.title,
   });
   final Function() onPressed;
   final String title;
+  final Color color;
+  final Color colorText;
+  final Color colorBorder;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +29,9 @@ class FilledButtonWidget extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadConst),
         ),
-        foregroundColor: whiteColor,
-        backgroundColor: secondaryColor,
-        side: BorderSide(color: secondaryColor),
+        foregroundColor: colorText,
+        backgroundColor: color,
+        side: BorderSide(color: colorBorder),
         padding: EdgeInsets.symmetric(vertical: buttonHeight),),
       onPressed: onPressed,
     child: Text(title.toUpperCase()),

@@ -20,6 +20,7 @@ const String catEyeImage = "assets/images/forget_password/eyeCat.png";
 
 //Dashboard 
 const String plantImage = "assets/images/dashboard/plant.png";
+const String girl = "assets/images/dashboard/girl.png";
 
 //Flashcards
 

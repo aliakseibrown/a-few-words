@@ -33,7 +33,10 @@ class CustomNavigationBar extends StatelessWidget {
           BarButton(
             icon: IconlyLight.document,
             text: review,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+              Get.toNamed("/review");
+            },
           ),
           const SizedBox(
             width: 55,
@@ -41,12 +44,17 @@ class CustomNavigationBar extends StatelessWidget {
           BarButton(
             icon: IconlyBroken.graph,
             text: stats,
-            onPressed: () {},
+            onPressed: () {
+              Get.back();
+            },
           ),
           BarButton(
             icon: IconlyBroken.setting,
             text: account,
-            onPressed: () => Get.back(),
+            onPressed: () {
+              Navigator.pop(context);
+              Get.toNamed("/account");
+            },
           ),
         ],
       ),

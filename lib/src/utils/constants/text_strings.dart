@@ -44,20 +44,26 @@ const String enterCode = "Enter the verification code sent at: ";
 ////CORE
 //Navigation Bar
 const String stats = "Stats";
-const String settings = "Settings";
+const String settingsText = "Settings";
 const String review = "Review";
 const String home = "Home";
 
 
 //Dashboard Page
 const String dashboard = "Dashboard";
-const String hiuser = "Hello, Alex";
+const String hiuser = "Hello, Alex!";
+const String study = "Let's do just 15 words for now";
 const String currentLanguage = "EN";
 const String yourstats = "Statistics";
+const String details = 'details';
+const String learnedToday = "Learned Today:";
+const String allWords = "Overall:";
 
 //Flashcards Page
 const String flashcards = "Flashcards";
 const String play = "play";
+const String learn = "learn";
+
 
 //Vocabulary Page
 const String vocabulary = "Vocabulary";

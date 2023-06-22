@@ -35,16 +35,13 @@ class FormHeaderWidget extends StatelessWidget {
         child: Image(image: AssetImage(image), color: imageColor, height: height * imageSize),
       ),
       Text(title, 
-        style:
-         const TextStyle(
+        style: const TextStyle(
           fontWeight: FontWeight.w700,
-          fontSize: headerText,
-        ),
+          fontSize: headerText,),
         textAlign: textTitleAlign,
       ),
       Text(subTitle,  
-        style:
-         const TextStyle(
+        style: const TextStyle(
           fontWeight: FontWeight.w900,
           fontSize: usualText,
         ), 
