@@ -1,10 +1,10 @@
+import 'package:a_few_words/src/presentation/authentication/controllers/signup_controller.dart';
 import 'package:a_few_words/src/presentation/widgets/form_header_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
-
 import 'widgets/signup_footer_widget.dart';
 import 'widgets/signup_form_widget.dart';
 
@@ -13,6 +13,7 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: whiteColor,

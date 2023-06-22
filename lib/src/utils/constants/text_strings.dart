@@ -73,4 +73,4 @@ const String statistic = "Statistic";
 
 //Account Page
 const String account = "Account";
-
+const String update = "Update";

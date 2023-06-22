@@ -5,6 +5,7 @@ import 'package:a_few_words/src/presentation/authentication/pages/login/login_pa
 import 'package:a_few_words/src/presentation/authentication/pages/signup/signup_page.dart';
 import 'package:a_few_words/src/presentation/authentication/pages/welcome/welcome_page.dart';
 import 'package:a_few_words/src/presentation/core/pages/account/account_page.dart';
+import 'package:a_few_words/src/presentation/core/pages/account/update_profile.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/dashboard_page.dart';
 import 'package:a_few_words/src/presentation/core/pages/flashcards/flashcards_page.dart';
 import 'package:a_few_words/src/presentation/core/pages/review/review_page.dart';
@@ -48,6 +49,10 @@ List<GetPage<dynamic>> get AppRouter {
       GetPage(
         name: '/review',
         page: () => ReviewPage(),
+      ),
+      GetPage(
+        name: '/updateprofile',
+        page: () => UpdateProfilePage(),
       ),
     ];
 }

@@ -14,7 +14,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "720089612420-4aid62bp8dh8tp2n9ir5g81marmpjn49.apps.googleusercontent.com",
+          "client_id": "720089612420-cr7mi0sl4559ddus1d3f38qavabfpi2l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -29,6 +29,13 @@
             {
               "client_id": "720089612420-4aid62bp8dh8tp2n9ir5g81marmpjn49.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "720089612420-tbpqir9hpukt3lobmeactvcufibmnogh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.aliakseibrown.afewwords.aFewWords"
+              }
             }
           ]
         }

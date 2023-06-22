@@ -17,7 +17,7 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: primaryColor,
+      backgroundColor: lightPrimaryColor,
       body: Container(
         padding: EdgeInsets.all(defaultSize),
         child: Column(
@@ -66,6 +66,7 @@ class WelcomePage extends StatelessWidget {
               Expanded(
                 child: FilledButtonWidget(
                 title: signUp,
+                color: primaryColor,
                 onPressed: () => Get.toNamed("/signup"),
                 )
               )

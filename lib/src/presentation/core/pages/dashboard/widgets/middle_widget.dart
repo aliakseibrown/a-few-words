@@ -137,7 +137,7 @@ class MiddleWidget extends StatelessWidget {
                   onPressed: () {},
                   color: primaryColor,
                   // colorText: secondaryColor,
-                  colorBorder: primaryColor,
+                  colorBorder: secondaryColor,
                 )),
           ],
         ),
