@@ -19,7 +19,7 @@ class Flashcard extends StatelessWidget {
       onDismissed: (direction) {
         // _counter += direction == DismissDirection.endToStart ? 1 : -1;
       },
-      key: new ValueKey(1), //counter
+      key: const ValueKey(1), //counter
       child: Column(
         children: [
           Container(
@@ -89,11 +89,11 @@ class Flashcard extends StatelessWidget {
               borderRadius: BorderRadius.circular(borderRadConst),
               color: whiteColor,
             ),
-            child: Column(
+            child: const Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       'zrobić, stwoczyć',
                       style: TextStyle(
@@ -104,7 +104,7 @@ class Flashcard extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Text(
+                Text(
                   'czas przeszły',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,

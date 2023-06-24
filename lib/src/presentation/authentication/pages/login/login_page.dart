@@ -10,7 +10,7 @@ import 'widgets/login_form_widget.dart';
 
 
 class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +18,9 @@ class LoginPage extends StatelessWidget {
       backgroundColor: whiteColor,
       body: Container(
         padding: const EdgeInsets.all(defaultSize),
-        child: Column(
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [ 
+          children: [ 
             FormHeaderWidget(
               image: leafImage,
               title: loginTitle,

@@ -39,7 +39,7 @@ class BarButton extends StatelessWidget {
               ),
             Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 color: secondaryColor,
                 fontSize: 13.0,
               ),

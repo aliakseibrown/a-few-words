@@ -8,14 +8,14 @@ import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 class ReviewPage extends StatelessWidget {
-  ReviewPage({super.key});
+  const ReviewPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(defaultSize),
+          padding: const EdgeInsets.all(defaultSize),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

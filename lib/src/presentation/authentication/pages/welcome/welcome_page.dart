@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 
 
 class WelcomePage extends StatelessWidget {
-  WelcomePage({super.key});
+  const WelcomePage({super.key});
   // final AuthService _auth = AuthService();
 
   @override
@@ -19,13 +19,13 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: lightPrimaryColor,
       body: Container(
-        padding: EdgeInsets.all(defaultSize),
+        padding: const EdgeInsets.all(defaultSize),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-          Image(image: AssetImage(welcomeScreenImage), height: height * 0.45),
-          Column(
-            children: const [
+          Image(image: const AssetImage(welcomeScreenImage), height: height * 0.45),
+          const Column(
+            children: [
               Text(welcomeTitle, 
                 style:
                  TextStyle(
@@ -56,13 +56,13 @@ class WelcomePage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       ),
                     foregroundColor: secondaryColor,
-                    side: BorderSide(color: secondaryColor),
-                    padding: EdgeInsets.symmetric(vertical: buttonHeight),
+                    side: const BorderSide(color: secondaryColor),
+                    padding: const EdgeInsets.symmetric(vertical: buttonHeight),
                   ),
                   child: Text(login.toUpperCase())
                   )
                 ),
-              SizedBox(width: 10.0,),
+              const SizedBox(width: 10.0,),
               Expanded(
                 child: FilledButtonWidget(
                 title: signUp,

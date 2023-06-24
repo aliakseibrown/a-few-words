@@ -21,7 +21,7 @@ class RepetitionScale extends StatelessWidget {
             color: accentColor
           ),
         ),
-        SizedBox(width: 5),
+        const SizedBox(width: 5),
         Container(
           width: scaleSize,
           height: scaleSize,
@@ -30,7 +30,7 @@ class RepetitionScale extends StatelessWidget {
             color: accentColor
           ),
         ),
-        SizedBox(width: 5),
+        const SizedBox(width: 5),
         Container(
           width: scaleSize,
           height: scaleSize,
@@ -39,7 +39,7 @@ class RepetitionScale extends StatelessWidget {
             color: backgroundColor
           ),
         ),
-        SizedBox(width: 5),
+        const SizedBox(width: 5),
         Container(
           width: scaleSize,
           height: scaleSize,
@@ -48,7 +48,7 @@ class RepetitionScale extends StatelessWidget {
             color: backgroundColor
           ),
         ),
-        SizedBox(width: 5),
+        const SizedBox(width: 5),
         Container(
           width: scaleSize,
           height: scaleSize,

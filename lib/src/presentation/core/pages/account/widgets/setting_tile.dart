@@ -3,7 +3,6 @@ import 'package:a_few_words/src/presentation/core/pages/account/models/setting.d
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class SettingTile extends StatelessWidget {
   final Setting setting;

@@ -1,6 +1,6 @@
 import 'package:a_few_words/src/presentation/authentication/controllers/signup_controller.dart';
+import 'package:a_few_words/src/presentation/authentication/models/user_model.dart';
 import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
-import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -15,14 +15,14 @@ class SignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignUpController());
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
 
 
     return Form(
       child: Container(
       padding: const EdgeInsets.symmetric(vertical: formHeight),
         child: Form(
-          key: _formKey,
+          key: formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -80,8 +80,16 @@ class SignUpForm extends StatelessWidget {
                 child: FilledButtonWidget(
                   title: signUp,
                   onPressed: () {
-                    if(_formKey.currentState!.validate()) {
-                      SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+                    if(formKey.currentState!.validate()) {
+                    final user = UserModel(
+                      email: controller.email.text.trim(),
+                      password: controller.password.text.trim(),
+                      fullName: controller.name.text.trim(),
+                    );
+                    SignUpController.instance.createUser(user);
+                    //SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+
+
                     }
                   },
                   )

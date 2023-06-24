@@ -36,11 +36,11 @@ List<GetPage<dynamic>> get AppRouter {
       ),
       GetPage(
         name: '/dashboard',
-        page: () => DashboardPage(),
+        page: () => const DashboardPage(),
       ),
       GetPage(
         name: '/flashcards',
-        page: () => FlashcardsPage(),
+        page: () => const FlashcardsPage(),
       ),
       GetPage(
         name: '/account',

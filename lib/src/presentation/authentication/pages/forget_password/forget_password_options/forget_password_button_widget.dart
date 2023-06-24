@@ -27,17 +27,17 @@ class forgetPasswordButtonWidget extends StatelessWidget {
           children: [
             Icon(
               btnIcon, size: 60.0),
-              SizedBox(width: 15.0,),
+              const SizedBox(width: 15.0,),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:[
                   Text(title, 
-                    style:TextStyle(
+                    style:const TextStyle(
                     fontWeight: FontWeight.w900,
                     fontSize: 20,
                     ), ), 
                     Text(subTitle, 
-                    style:TextStyle(
+                    style:const TextStyle(
                     fontSize: usualText,
                     ), ), 
                 ],

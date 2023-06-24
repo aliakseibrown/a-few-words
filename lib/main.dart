@@ -21,11 +21,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: AppTheme.light,
-      initialRoute: '/welcome',
+      //initialRoute: '/welcome',
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.cupertino,
       transitionDuration: const Duration(milliseconds: 300),
       getPages: AppRouter,
+      home: const CircularProgressIndicator(),
     );
   }
 }

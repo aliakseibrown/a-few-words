@@ -5,10 +5,11 @@ import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 
 class UpdateProfilePage extends StatelessWidget {
-  UpdateProfilePage({super.key});
+  const UpdateProfilePage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,14 +103,24 @@ class UpdateProfilePage extends StatelessWidget {
                   ],
                 ),
               ),
-
+              const SizedBox(height: buttonHeight-10),
+              SizedBox(
+                  width: 150,
+                  child: FilledButtonWidget(
+                    color: accentColor,
+                    title: 'delete account',
+                    onPressed: () {
+                      //Get.toNamed("/account");
+                    },
+                  )),
               const SizedBox(height: buttonHeight * 2),
               SizedBox(
                   width: double.infinity,
                   child: FilledButtonWidget(
                     title: 'save',
                     onPressed: () {
-                      Navigator.pop(context);
+                      //Navigator.pop(context);
+                      Get.back();
                       //Get.toNamed("/account");
                     },
                   )),

@@ -8,24 +8,24 @@ import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 
 class ForgetPasswordMailPage extends StatelessWidget {
-  ForgetPasswordMailPage({super.key});
+  const ForgetPasswordMailPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(defaultSize),
+          padding: const EdgeInsets.all(defaultSize),
           child: Column(
             children:[
-              SizedBox(height: defaultSize*4,),
+              const SizedBox(height: defaultSize*4,),
               const FormHeaderWidget(
                 image: eyeImage,
                 title: resetViaMail,
                 subTitle: forgetMailSubTitle,
                 textSubAlign: TextAlign.center,
               ),
-              SizedBox(height: defaultSize,),
+              const SizedBox(height: defaultSize,),
               Form(
                 child: Column(
                   children: [
@@ -37,7 +37,7 @@ class ForgetPasswordMailPage extends StatelessWidget {
                         prefixIcon: Icon(IconlyBroken.message),
                       ),
                     ),
-                    SizedBox(height: defaultSize-10,),
+                    const SizedBox(height: defaultSize-10,),
                     SizedBox(
                       width: double.infinity,
                       child: FilledButtonWidget(

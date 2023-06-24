@@ -24,7 +24,7 @@ class MiddleWidget extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+                padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
                 decoration: BoxDecoration(
                   color: lightPrimaryColor,
                   borderRadius: BorderRadius.circular(borderRadConst),

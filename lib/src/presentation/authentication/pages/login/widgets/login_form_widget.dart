@@ -1,3 +1,5 @@
+import 'package:a_few_words/src/presentation/authentication/controllers/login_controller.dart';
+import 'package:a_few_words/src/presentation/authentication/controllers/signup_controller.dart';
 import 'package:a_few_words/src/presentation/authentication/pages/forget_password/forget_password_options/forget_password_buttom_sheet.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/dashboard_page.dart';
 import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
@@ -15,7 +17,11 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+    final formKey = GlobalKey<FormState>();
+
     return Form(
+      key: formKey,
       child: Container(
       padding: const EdgeInsets.symmetric(vertical: formHeight),
         child: Column(
@@ -49,7 +55,7 @@ class LoginForm extends StatelessWidget {
                 onPressed: () {
                   ForgetPasswordPage().buildShowModalBottomSheet(context);
                 },
-                child: Text(forgetPasword),
+                child: const Text(forgetPasword),
               ),
             ),
             const SizedBox(height: formHeight,),
@@ -58,7 +64,16 @@ class LoginForm extends StatelessWidget {
               width: double.infinity,
               child: FilledButtonWidget(
                 title: login,
-                onPressed: () => Get.toNamed("/dashboard"),
+                onPressed: () {
+                  //Get.toNamed('/dashboard');
+                  if(formKey.currentState!.validate()) {
+                    //SignUpController.instance.emailAuthetication(controller.email.text.trim(), controller.password.text.trim());
+                    LoginController.instance.emailAuthetication(controller.email.text.trim(), controller.password.text.trim());
+                    print(controller.email.text.trim());
+                    print(controller.password.text.trim());
+                    }
+
+                },
               )
             )
           ],

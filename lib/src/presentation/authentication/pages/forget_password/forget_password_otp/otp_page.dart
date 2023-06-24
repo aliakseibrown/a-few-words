@@ -11,14 +11,14 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
 class OtpPage extends StatelessWidget {
-  OtpPage({super.key});
+  const OtpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(defaultSize),
+          padding: const EdgeInsets.all(defaultSize),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children:[

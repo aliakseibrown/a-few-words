@@ -9,7 +9,7 @@ import 'widgets/signup_footer_widget.dart';
 import 'widgets/signup_form_widget.dart';
 
 class SignUpPage extends StatelessWidget {
-  SignUpPage({super.key});
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,10 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: whiteColor,
       body: Container(
-        padding: EdgeInsets.all(defaultSize),
-        child: Column(
+        padding: const EdgeInsets.all(defaultSize),
+        child: const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               FormHeaderWidget(
                 image: handImage,
                 title: signUpTitle,

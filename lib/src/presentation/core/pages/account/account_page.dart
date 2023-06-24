@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AccountPage extends StatelessWidget {
-  AccountPage({super.key});
+  const AccountPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +43,7 @@ class AccountPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: buttonHeight),
-              Container(
+              SizedBox(
                 width: 110,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -53,7 +53,7 @@ class AccountPage extends StatelessWidget {
                     ),
                     foregroundColor: whiteColor,
                     backgroundColor: secondaryColor,
-                    side: BorderSide(color: primaryColor),
+                    side: const BorderSide(color: primaryColor),
                     padding: const EdgeInsets.symmetric(vertical: buttonHeight),
                   ),
                   onPressed: () {

@@ -15,7 +15,7 @@ class SentenceTile extends StatelessWidget {
     return Container(
       width: 280,
       height: 80,
-      margin: EdgeInsets.only(bottom:25),
+      margin: const EdgeInsets.only(bottom:25),
       decoration: BoxDecoration(
         color: whiteColor,
         borderRadius: BorderRadius.circular(borderRadConst),
@@ -24,15 +24,15 @@ class SentenceTile extends StatelessWidget {
         children: [
           Text(
             sentence.word,
-            style: TextStyle(color: secondaryColor),
+            style: const TextStyle(color: secondaryColor),
           ),
           Text(
             sentence.sentence,
-            style: TextStyle(color: secondaryColor),
+            style: const TextStyle(color: secondaryColor),
           ),
           Text(
             sentence.translation,
-            style: TextStyle(color: secondaryColor),
+            style: const TextStyle(color: secondaryColor),
           ),
         ],
       )
