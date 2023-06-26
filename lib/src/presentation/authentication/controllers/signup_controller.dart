@@ -1,6 +1,6 @@
 import 'package:a_few_words/src/domain/repositories/authentication_repository/authentication_repository.dart';
 import 'package:a_few_words/src/domain/repositories/user_repository/user_repository.dart';
-import 'package:a_few_words/src/presentation/authentication/models/user_model.dart';
+import 'package:a_few_words/src/domain/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

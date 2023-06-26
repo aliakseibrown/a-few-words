@@ -1,5 +1,5 @@
 import 'package:a_few_words/src/presentation/authentication/controllers/signup_controller.dart';
-import 'package:a_few_words/src/presentation/authentication/models/user_model.dart';
+import 'package:a_few_words/src/domain/models/user_model.dart';
 import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';

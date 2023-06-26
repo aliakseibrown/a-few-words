@@ -1,12 +1,11 @@
+import 'package:a_few_words/src/presentation/core/controllers/review_controller.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/bar_graph/widgets/bar_graph.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/widgets/header_widget.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/widgets/middle_widget.dart';
 import 'package:a_few_words/src/presentation/core/pages/home_bar/widgets/centered_navigation_button.dart';
 import 'package:a_few_words/src/presentation/core/pages/home_bar/custom_navigation_bar.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
-import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
-import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatelessWidget {

@@ -1,5 +1,4 @@
 import 'package:a_few_words/src/domain/repositories/authentication_repository/exceptions/signup_email_password_failure.dart';
-import 'package:a_few_words/src/presentation/authentication/pages/login/login_page.dart';
 import 'package:a_few_words/src/presentation/authentication/pages/welcome/welcome_page.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/dashboard_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';

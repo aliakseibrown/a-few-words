@@ -1,8 +1,10 @@
+import 'package:a_few_words/src/presentation/core/controllers/review_controller.dart';
 import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MiddleWidget extends StatelessWidget {
   const MiddleWidget({
@@ -11,6 +13,7 @@ class MiddleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ReviewController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -134,7 +137,9 @@ class MiddleWidget extends StatelessWidget {
                 ),
                 child: FilledButtonWidget(
                   title: details,
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.createTestRepository();
+                  },
                   color: primaryColor,
                   // colorText: secondaryColor,
                   colorBorder: secondaryColor,

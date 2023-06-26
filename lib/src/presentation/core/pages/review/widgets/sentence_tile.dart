@@ -1,11 +1,11 @@
-import 'package:a_few_words/src/presentation/core/pages/review/models/sentence.dart';
+import 'package:a_few_words/src/domain/models/sentence_model.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class SentenceTile extends StatelessWidget {
 
-  Sentence sentence;
+  SentenceModel sentence;
   SentenceTile({
     super.key,
     required this.sentence
@@ -23,11 +23,11 @@ class SentenceTile extends StatelessWidget {
       child:Column(
         children: [
           Text(
-            sentence.word,
+            sentence.keyWord,
             style: const TextStyle(color: secondaryColor),
           ),
           Text(
-            sentence.sentence,
+            sentence.fullSentence,
             style: const TextStyle(color: secondaryColor),
           ),
           Text(
