@@ -17,9 +17,7 @@ class SignUpForm extends StatelessWidget {
     final controller = Get.put(SignUpController());
     final formKey = GlobalKey<FormState>();
 
-
-    return Form(
-      child: Container(
+    return Container(
       padding: const EdgeInsets.symmetric(vertical: formHeight),
         child: Form(
           key: formKey,
@@ -81,14 +79,13 @@ class SignUpForm extends StatelessWidget {
                   title: signUp,
                   onPressed: () {
                     if(formKey.currentState!.validate()) {
-                    final user = UserModel(
-                      email: controller.email.text.trim(),
-                      password: controller.password.text.trim(),
-                      fullName: controller.name.text.trim(),
-                    );
-                    SignUpController.instance.createUser(user);
+                    // final user = UserModel(
+                    //   email: controller.email.text.trim(),
+                    //   password: controller.password.text.trim(),
+                    //   fullName: controller.name.text.trim(),
+                    // );
+                      controller.createUser();
                     //SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
-
 
                     }
                   },
@@ -97,7 +94,6 @@ class SignUpForm extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 } 

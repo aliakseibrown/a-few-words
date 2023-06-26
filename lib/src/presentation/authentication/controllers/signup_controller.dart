@@ -4,36 +4,30 @@ import 'package:a_few_words/src/presentation/authentication/models/user_model.da
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-final userRepo = Get.put(UserRepository());
+//final userRepo = Get.put(UserRepository());
 // final authenticationRepository = Get.put(AuthenticationRepository());
 
 class SignUpController extends GetxController {
   static SignUpController get instance =>  Get.find();
+
 
   final email = TextEditingController();
   final password = TextEditingController();
   final repeatPassword = TextEditingController();
   final name = TextEditingController();
 
-  void registerUser(String email, String password) {
-    String? error = AuthenticationRepository.instance.createUserWithEmailAndPassword(email, password) as String?;
-    if (error != null) {
-      Get.showSnackbar(GetSnackBar(message: error.toString(),));
-    }
-  }
+  Future<void> createUser() async {
+    final user = UserModel(
+      email: email.text.trim(),
+      password: password.text.trim(),
+      fullName: name.text.trim(),
+    );
 
-  Future<void> createUser(UserModel user ) async {
-    await userRepo.createUser(user);
-    registerUser(user.email, user.password);
-    emailAuthetication(user.email, user.password);
-    //phoneAuthetication(user.phone);
-  }
-
-  void emailAuthetication(String email, String password) {
-    String? error = AuthenticationRepository.instance.loginWithEmailAndPassword(email, password) as String?;
-    if (error != null) {
-      Get.showSnackbar(GetSnackBar(message: error.toString(),));
-    }
+    final auth = AuthenticationRepository.instance;
+    await auth.createUserWithEmailAndPassword(user.email, user.password);
+    await UserRepository.instance.createUser(user);
+    auth.setInitialPage(auth.firebaseUser.value);
   }
 }
+
 

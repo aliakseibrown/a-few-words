@@ -20,15 +20,16 @@ class LoginForm extends StatelessWidget {
     final controller = Get.put(LoginController());
     final formKey = GlobalKey<FormState>();
 
-    return Form(
-      key: formKey,
-      child: Container(
+    return Container(
       padding: const EdgeInsets.symmetric(vertical: formHeight),
+      child: Form(
+      key: formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: formHeight,),
             TextFormField( 
+              controller: controller.email,
               decoration: const InputDecoration(
                 prefixIcon: Icon(IconlyBroken.profile),
                 labelText: email,
@@ -38,6 +39,7 @@ class LoginForm extends StatelessWidget {
             ),
             const SizedBox(height: formHeight,),
             TextFormField( 
+              controller: controller.password,
               decoration: const InputDecoration(
                 prefixIcon: Icon(IconlyBroken.password),
                 labelText: password,
@@ -67,10 +69,9 @@ class LoginForm extends StatelessWidget {
                 onPressed: () {
                   //Get.toNamed('/dashboard');
                   if(formKey.currentState!.validate()) {
-                    //SignUpController.instance.emailAuthetication(controller.email.text.trim(), controller.password.text.trim());
-                    LoginController.instance.emailAuthetication(controller.email.text.trim(), controller.password.text.trim());
-                    print(controller.email.text.trim());
-                    print(controller.password.text.trim());
+                    controller.login();
+                    //LoginController.instance.emailAuthetication(controller.email.text.trim(), controller.password.text.trim());
+
                     }
 
                 },

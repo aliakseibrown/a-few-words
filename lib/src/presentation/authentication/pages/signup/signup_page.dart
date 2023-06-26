@@ -1,4 +1,3 @@
-import 'package:a_few_words/src/presentation/authentication/controllers/signup_controller.dart';
 import 'package:a_few_words/src/presentation/widgets/form_header_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/images.dart';

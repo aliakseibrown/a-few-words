@@ -16,18 +16,17 @@ class AuthenticationRepository extends GetxController {
     Future.delayed(const Duration(seconds: 6));
     firebaseUser = Rx<User?>(_auth.currentUser);
     firebaseUser.bindStream(_auth.userChanges());
-    ever(firebaseUser, _setInitialPage);
+    setInitialPage(firebaseUser.value);
+    //ever(firebaseUser, setInitialPage);
   }
 
-  _setInitialPage(User? user) {
+  setInitialPage(User? user) async{
     user == null
         ? Get.offAll(() => const WelcomePage())
         : Get.offAll(() => const DashboardPage());
   }
 
-  Future<void> createUserWithEmailAndPassword(
-      String email, String password) async {
-    //print('');
+  Future<void> createUserWithEmailAndPassword(String email, String password) async {
     try {
       await _auth.createUserWithEmailAndPassword(
           email: email, 
@@ -51,15 +50,16 @@ class AuthenticationRepository extends GetxController {
       await _auth.signInWithEmailAndPassword(
         email: email, 
         password: password);
-      firebaseUser.value != null
-          ? Get.offAll(() => const DashboardPage())
-          : Get.to(() => const LoginPage());
+      // firebaseUser.value != null
+      //     ? Get.offAll(() => const DashboardPage())
+      //     : Get.to(() => const LoginPage());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');
       } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
       }
+    } catch (_) {
     }
   }
 

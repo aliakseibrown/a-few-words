@@ -8,14 +8,15 @@ final userRepo = Get.put(UserRepository());
 class LoginController extends GetxController {
   static LoginController get instance =>  Get.find();
 
+
+  final showPassword = false.obs;
   final email = TextEditingController();
   final password = TextEditingController();
   
-  void emailAuthetication(String email, String password) {
-    String? error = AuthenticationRepository.instance.loginWithEmailAndPassword(email, password) as String?;
-    if (error != null) {
-      Get.showSnackbar(GetSnackBar(message: error.toString(),));
-    }
+  void login() async {
+    final auth = AuthenticationRepository.instance;
+    await auth.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+    auth.setInitialPage(auth.firebaseUser.value);
   }
 }
 
