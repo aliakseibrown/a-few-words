@@ -17,9 +17,18 @@ class ReviewController extends GetxController {
       Get.snackbar('Error', 'Login to continue');
     }
   }
-
+  getNextTenSentences(int id){
+    final email = _auth.firebaseUser.value?.email;
+    if (email != null) {
+      return _sentence.getNextListSentences(id);
+    } else {
+      Get.snackbar('Error', 'Login to continue');
+    }
+  }
+  
   createTestRepository() {
     final sentence = SentenceModel(
+      id: 1,
       keyWord: 'Apple',
       fullSentence: 'fullSentence',
       translation: 'translation',
@@ -31,6 +40,7 @@ class ReviewController extends GetxController {
     );
     _sentence.createSentence(sentence);
     final sentence2 = SentenceModel(
+      id: 2,
       keyWord: 'Pear',
       fullSentence: 'fullSentence',
       translation: 'translation',
@@ -42,6 +52,7 @@ class ReviewController extends GetxController {
     );
     _sentence.createSentence(sentence2);
     final sentence3 = SentenceModel(
+      id: 3,
       keyWord: 'make',
       fullSentence: 'fullSentence',
       translation: 'translation',

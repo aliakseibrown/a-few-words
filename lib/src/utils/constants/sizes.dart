@@ -1,4 +1,6 @@
 //sizes
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 const defaultSize = 30.0;
 const splashContainerSize = 30.0;
 const buttonHeight = 15.0;
@@ -17,3 +19,9 @@ const dashboardBox = 18.0;
 const translationSize = 20.0;
 const sentenceSize = 20.0;
 const scaleSize = 10.0;
+
+//Review
+const wordSize = 20.0;
+const cardMargin = 5.0;
+const sentenceReviewSize = 15.0;
+const transactionReviewSize = 15.0;

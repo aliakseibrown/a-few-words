@@ -37,14 +37,13 @@ class FormHeaderWidget extends StatelessWidget {
       Text(title, 
         style: const TextStyle(
           fontWeight: FontWeight.w700,
-          fontSize: headerText,),
+          fontSize: wordSize,),
         textAlign: textTitleAlign,
       ),
       Text(subTitle,  
         style: const TextStyle(
-          fontWeight: FontWeight.w900,
-          fontSize: usualText,
-        ), 
+          fontWeight: FontWeight.w700,
+          fontSize: wordSize,),
       textAlign: textSubAlign,),
     ],
           );

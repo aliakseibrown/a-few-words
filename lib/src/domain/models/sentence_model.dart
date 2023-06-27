@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SentenceModel {
-  final int? id;
+  final int id;
   final String keyWord;
   final String fullSentence;
   final String translation;
@@ -12,7 +12,7 @@ class SentenceModel {
   final String lastdate;
 
   SentenceModel({
-    this.id,
+    required this.id,
     required this.keyWord,
     required this.fullSentence,
     required this.translation,
@@ -25,6 +25,7 @@ class SentenceModel {
   
   toJson() {
     return{
+    "id": id,
     "KeyWord": keyWord,
     "FullSentence":  fullSentence,
     "Translation": translation,
@@ -39,6 +40,7 @@ class SentenceModel {
 factory SentenceModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document){
     final data = document.data()!;
     return SentenceModel(
+      id: data['id'],
       fullSentence: data["FullSentence"],
       keyWord: data["KeyWord"],
       translation: data["Translation"],

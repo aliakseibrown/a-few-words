@@ -21,7 +21,7 @@ class ReviewPage extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(defaultSize),
           child: FutureBuilder(
-            future: controller.getAllSentences(),
+            future: controller.getNextTenSentences(1),
             builder: (context, snapshot) {
               if(snapshot.connectionState == ConnectionState.done) {
                 if(snapshot.hasData) {
