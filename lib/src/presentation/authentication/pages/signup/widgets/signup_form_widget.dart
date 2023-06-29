@@ -1,5 +1,4 @@
 import 'package:a_few_words/src/presentation/authentication/controllers/signup_controller.dart';
-import 'package:a_few_words/src/domain/models/user_model.dart';
 import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
@@ -45,31 +44,33 @@ class SignUpForm extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: formHeight,),
-              TextFormField( 
+              Obx(() => TextFormField( 
                 controller: controller.password,
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(IconlyBroken.password),
+                obscureText: controller.obscureTextPassword,
+                decoration:  InputDecoration(
+                  prefixIcon: const Icon(IconlyBroken.password),
                   labelText: password,
                   hintText: password,
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
-                    onPressed: null, 
-                    icon: Icon(IconlyBroken.show)),
+                    onPressed:  controller.switchPassword, 
+                    icon: const Icon(IconlyBroken.show)),
                 ),
-              ),
+              ),),
               const SizedBox(height: formHeight,),
-              TextFormField( 
+              Obx(() => TextFormField( 
                 controller: controller.repeatPassword,
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(IconlyBroken.password),
+                obscureText: controller.obscureTextRepeatPassword,
+                decoration:  InputDecoration(
+                  prefixIcon: const Icon(IconlyBroken.password),
                   labelText: repeatThePassword,
                   hintText: repeatThePassword,
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
-                    onPressed: null, 
-                    icon: Icon(IconlyBroken.show)),
+                    onPressed: controller.switchRepeatPassword, 
+                    icon: const Icon(IconlyBroken.show)),
                 ),
-              ),
+              ),),
               const SizedBox(height: formHeight,),
               const SizedBox(height: formHeight,),
               SizedBox(
@@ -84,7 +85,7 @@ class SignUpForm extends StatelessWidget {
                     //   password: controller.password.text.trim(),
                     //   fullName: controller.name.text.trim(),
                     // );
-                      controller.createUser();
+                      controller.checkPasswords();
                     //SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
 
                     }

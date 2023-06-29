@@ -1,5 +1,4 @@
 import 'package:a_few_words/src/utils/constants/colors.dart';
-import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 class BarButton extends StatelessWidget {

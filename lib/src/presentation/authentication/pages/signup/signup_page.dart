@@ -13,7 +13,6 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: whiteColor,
       body: Container(

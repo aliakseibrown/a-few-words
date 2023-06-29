@@ -46,11 +46,9 @@ class Flashcard extends StatelessWidget {
                           textAlign: TextAlign.center,
                         ),
                         Container(
-                          // height: 45,
                           decoration: const BoxDecoration(
                             color: boxColor,
                           ),
-                          // padding: const EdgeInsets.symmetric(horizontal: 5),
                           child: AutoSizeTextField(
                             controller: controller.word,
                             decoration:
@@ -96,7 +94,7 @@ class Flashcard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    sentence.keyWord,
+                    sentence.keyWordTranslation,
                     style: const TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: translationSize,

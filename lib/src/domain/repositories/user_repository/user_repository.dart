@@ -9,7 +9,11 @@ class UserRepository extends GetxController {
   final _db = FirebaseFirestore.instance;
 
   createUser(UserModel user) async {
-    await _db.collection('Users').add(user.toJson()).whenComplete(() {
+    await _db
+    .collection('Users')
+    .doc(user.email)
+    .set(user.toJson())
+    .whenComplete(() {
       Get.snackbar(
         "Success",
         "Your account has been created",
@@ -25,5 +29,23 @@ class UserRepository extends GetxController {
       // ignore: avoid_print
       print(error.toString());
     });
+  } 
+
+  updateUserTime(String id) async {
+    await _db
+        .collection('Users')
+        .doc(id)
+        .update({"EnteredOn": Timestamp.now()});
   }
+
+  Future<UserModel>  getUserDetails(String email) async {
+    final snapshot = await _db.collection("Users").where('Email', isEqualTo: email).get();
+    final userData = snapshot.docs.map((e) => UserModel.fromSnapshot(e)).single;
+    return userData;
+  }
+
+  Future<void> updateUserRecord(UserModel user) async{
+    await _db.collection("Users").doc(user.email).update(user.toJson());
+  }
+
 }

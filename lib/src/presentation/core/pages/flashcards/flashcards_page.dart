@@ -1,4 +1,4 @@
-import 'package:a_few_words/src/domain/models/sentence_model.dart';
+// ignore_for_file: avoid_print
 import 'package:a_few_words/src/presentation/core/controllers/flashcards_controller.dart';
 import 'package:a_few_words/src/presentation/core/pages/flashcards/widgets/flashcard.dart';
 import 'package:a_few_words/src/presentation/core/pages/flashcards/widgets/linear_bar.dart';
@@ -18,58 +18,64 @@ class FlashcardsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor,
       body: SingleChildScrollView(
-        child: FutureBuilder(
-            future: controller.getNextTenSentences(1),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                if (snapshot.hasData) {
-                  List<SentenceModel> sentenceData =
-                      snapshot.data as List<SentenceModel>;
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const LinearBar(),
-                      Obx(() {
-                        return Container(
-                          padding: const EdgeInsets.all(defaultSize),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Flashcard(
-                                  sentence:
-                                      sentenceData[controller.counter.value]),
-                              const SizedBox(height: defaultSize * 5),
-                              SizedBox(
-                                  width: 500,
-                                  child: FilledButtonWidget(
-                                    title: learn,
-                                    onPressed: () {
-                                      if (controller.word.text == sentenceData[controller.counter.value].keyWord) {
-                                        controller.word.clear();
-                                        if (controller.counter.value == 2) {
-                                          controller.counter.value = 0;
-                                        } else {
-                                          controller.counter.value++;
-                                        }
-                                        print(controller.counter.value);
-                                      }
-                                    },
-                                  )),
-                            ],
-                          ),
-                        );
-                      })
-                    ],
-                  );
-                } else if (snapshot.hasError) {
-                  return Center(child: Text(snapshot.error.toString()));
-                } else {
-                  return const Center(child: Text('Something went wrong'));
-                }
-              } else {
-                return const Center(child: CircularProgressIndicator());
-              }
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Obx(() {
+              return LinearBar(index: controller.index.value);
             }),
+            GetBuilder<FlashcardsController>(
+                init: FlashcardsController(),
+                global: false,
+                builder: (controller) {
+                  if (controller.index.value < controller.activeList.length) {
+                    return Container(
+                      padding: const EdgeInsets.all(defaultSize),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Flashcard(
+                              sentence: controller
+                                  .activeList[controller.index.value]),
+                          const SizedBox(height: defaultSize * 5),
+                          SizedBox(
+                              width: 500,
+                              child: FilledButtonWidget(
+                                title: learn,
+                                onPressed: () {
+                                  controller.checkWord(controller
+                                      .activeList[controller.index.value]
+                                      .keyWord);
+                                },
+                              )),
+                        ],
+                      ),
+                    );
+                  } else {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                            padding: const EdgeInsets.all(buttonHeight),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(borderRadConst),
+                              color: whiteColor,
+                            ),
+                            child: const Text(
+                              'Check for new words later',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: translationSize,
+                              ),
+                              textAlign: TextAlign.center,
+                            )),
+                      ],
+                    );
+                  }
+                })
+          ],
+        ),
       ),
       // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       // floatingActionButton: const CenteredNavigationButton(),

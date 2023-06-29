@@ -4,6 +4,8 @@ import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
+
+// ignore: must_be_immutable
 class SentenceTile extends StatelessWidget {
   SentenceModel sentence;
   SentenceTile({super.key, required this.sentence});
@@ -21,22 +23,20 @@ class SentenceTile extends StatelessWidget {
           margin: const EdgeInsets.all(cardMargin),
           child: Column(
             children: [
-              Container(
-                child: Row(
-                //mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const SizedBox(width:buttonHeight-5),
-                    RepetitionScale(times: sentence.times),
-                    const SizedBox(width:defaultSize*2),
-                    Text(
-                      sentence.keyWord,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: wordSize,
-                      ),
+              Row(
+              //mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const SizedBox(width:buttonHeight-5),
+                  RepetitionScale(times: sentence.times),
+                  const SizedBox(width:defaultSize*2),
+                  Text(
+                    sentence.keyWord,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: wordSize,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               const SizedBox(height: cardMargin-2 ),
               Text(

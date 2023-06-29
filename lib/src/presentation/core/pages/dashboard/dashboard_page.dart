@@ -1,4 +1,3 @@
-import 'package:a_few_words/src/presentation/core/controllers/review_controller.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/bar_graph/widgets/bar_graph.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/widgets/header_widget.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/widgets/middle_widget.dart';
@@ -12,7 +11,6 @@ class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
     const List<double> week = [
       2.0,
       20.0,

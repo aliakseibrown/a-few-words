@@ -5,10 +5,12 @@ import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 
 class LinearBar extends StatelessWidget {
+  final int index;
   const LinearBar({
+    required this.index,
     super.key,
   });
-
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,11 +36,11 @@ class LinearBar extends StatelessWidget {
               child: const Icon(IconlyLight.home),
             ),
           ),
-          const SizedBox(
+           SizedBox(
             width: 270,
             child: LinearProgressIndicator(
               //value: controller.value,
-              value: 71 / 100,
+              value: index / 50,
               color: indicatorColor,
               backgroundColor: whiteColor,
               semanticsLabel: 'Linear progress indicator',

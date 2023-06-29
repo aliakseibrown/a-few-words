@@ -1,5 +1,4 @@
 //sizes
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 const defaultSize = 30.0;
 const splashContainerSize = 30.0;

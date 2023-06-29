@@ -1,5 +1,4 @@
 import 'package:a_few_words/src/presentation/authentication/pages/forget_password/forget_password_options/forget_password_button_widget.dart';
-import 'package:a_few_words/src/presentation/authentication/pages/forget_password/forget_password_mail/forget_password_mail_page.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';

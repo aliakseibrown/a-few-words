@@ -16,7 +16,7 @@ class LoginController extends GetxController {
   void login() async {
     final auth = AuthenticationRepository.instance;
     await auth.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
-    auth.setInitialPage(auth.firebaseUser.value);
+    //auth.setInitialPage(auth.firebaseUser.value);
   }
 }
 

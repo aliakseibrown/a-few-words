@@ -1,11 +1,12 @@
 
+import 'package:a_few_words/bindings.dart';
 import 'package:a_few_words/src/presentation/authentication/pages/forget_password/forget_password_mail/forget_password_mail_page.dart';
 import 'package:a_few_words/src/presentation/authentication/pages/forget_password/forget_password_otp/otp_page.dart';
 import 'package:a_few_words/src/presentation/authentication/pages/login/login_page.dart';
 import 'package:a_few_words/src/presentation/authentication/pages/signup/signup_page.dart';
 import 'package:a_few_words/src/presentation/authentication/pages/welcome/welcome_page.dart';
 import 'package:a_few_words/src/presentation/core/pages/account/account_page.dart';
-import 'package:a_few_words/src/presentation/core/pages/account/update_profile.dart';
+import 'package:a_few_words/src/presentation/core/pages/account/update_profile/update_profile.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/dashboard_page.dart';
 import 'package:a_few_words/src/presentation/core/pages/flashcards/flashcards_page.dart';
 import 'package:a_few_words/src/presentation/core/pages/review/review_page.dart';
@@ -49,6 +50,7 @@ List<GetPage<dynamic>> get AppRouter {
       GetPage(
         name: '/review',
         page: () => ReviewPage(),
+        binding: ReviewBindings(),
       ),
       GetPage(
         name: '/updateprofile',

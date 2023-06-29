@@ -1,9 +1,7 @@
 import 'package:a_few_words/src/utils/constants/colors.dart';
-import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({
