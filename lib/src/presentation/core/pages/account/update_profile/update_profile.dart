@@ -1,3 +1,4 @@
+import 'package:a_few_words/src/presentation/core/controllers/account_controller.dart';
 import 'package:a_few_words/src/presentation/core/pages/home_bar/custom_navigation_bar.dart';
 import 'package:a_few_words/src/presentation/core/pages/home_bar/widgets/centered_navigation_button.dart';
 import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
@@ -12,6 +13,7 @@ class UpdateProfilePage extends StatelessWidget {
   const UpdateProfilePage({super.key});
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(AccountController());
     return Scaffold(
       backgroundColor: backgroundColor,
       body: SingleChildScrollView(
@@ -23,23 +25,23 @@ class UpdateProfilePage extends StatelessWidget {
               const SizedBox(
                 height: defaultSize * 4,
               ),
-              const Text(
-                'name',
-                style: TextStyle(
+              Obx(() => Text(
+                controller.currentUser.fullName,
+                style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 20,
                 ),
                 textAlign: TextAlign.center,
-              ),
-              const Text(
-                'email@gmail.com',
-                style: TextStyle(
+              ),),
+              Obx(() => Text(
+                controller.currentUser.email,
+                style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 15,
                   color: greyColor,
                 ),
                 textAlign: TextAlign.center,
-              ),
+              ),),
               // const SizedBox(height: defaultSize),
               Container(
                 padding: const EdgeInsets.symmetric(vertical: formHeight),
@@ -49,31 +51,34 @@ class UpdateProfilePage extends StatelessWidget {
                     const SizedBox(
                       height: formHeight,
                     ),
-                    TextFormField(
-                      //controller: controller.name,
+                    Obx(() => TextFormField(
+                      controller: controller.name,
+                      initialValue: controller.currentUser.fullName,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(IconlyBroken.profile),
                         labelText: name,
                         hintText: name,
                         border: OutlineInputBorder(),
                       ),
-                    ),
+                    ),),
                     const SizedBox(
                       height: formHeight,
                     ),
-                    TextFormField(
-                      //controller: controller.email,
+                    Obx(() => TextFormField(
+                      controller: controller.email,
+                      initialValue: controller.currentUser.email,
                       decoration: const InputDecoration(
                           prefixIcon: Icon(IconlyBroken.message),
                           labelText: email,
                           hintText: email,
                           border: OutlineInputBorder()),
-                    ),
+                    ),),
                     const SizedBox(
                       height: formHeight,
                     ),
-                    TextFormField(
-                      //controller: controller.password,
+                    Obx(() => TextFormField(
+                      controller: controller.password,
+                      obscureText: controller.obscureTextPassword,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(IconlyBroken.password),
                         labelText: password,
@@ -82,12 +87,13 @@ class UpdateProfilePage extends StatelessWidget {
                         suffixIcon: IconButton(
                             onPressed: null, icon: Icon(IconlyBroken.show)),
                       ),
-                    ),
+                    ),),
                     const SizedBox(
                       height: formHeight,
                     ),
-                    TextFormField(
-                      //controller: controller.repeatPassword,
+                    Obx(() => TextFormField(
+                      controller: controller.repeatPassword,
+                      obscureText: controller.obscureTextRepeatPassword,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(IconlyBroken.password),
                         labelText: repeatThePassword,
@@ -96,7 +102,7 @@ class UpdateProfilePage extends StatelessWidget {
                         suffixIcon: IconButton(
                             onPressed: null, icon: Icon(IconlyBroken.show)),
                       ),
-                    ),
+                    ),),
                     const SizedBox(
                       height: formHeight,
                     ),
@@ -119,7 +125,7 @@ class UpdateProfilePage extends StatelessWidget {
                   child: FilledButtonWidget(
                     title: 'save',
                     onPressed: () {
-                      //Navigator.pop(context);
+                      controller.checkPasswords();
                       Get.back();
                       //Get.toNamed("/account");
                     },

@@ -1,3 +1,4 @@
+import 'package:a_few_words/src/presentation/core/controllers/dashboard_controller.dart';
 import 'package:a_few_words/src/presentation/core/controllers/review_controller.dart';
 import 'package:a_few_words/src/presentation/widgets/filled_button_widget.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
@@ -13,7 +14,7 @@ class MiddleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(ReviewController());
+    final controller = Get.put(DashboardController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -66,15 +67,15 @@ class MiddleWidget extends StatelessWidget {
                           borderRadius:
                               BorderRadius.circular(borderRadConst - 5),
                         ),
-                        child: const Text(
-                          '52',
+                        child: Obx(() => Text(
+                          controller.todayCards.value.toString(),
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: dashboardBox + 12,
                             color: whiteColor,
                           ),
                           textAlign: TextAlign.center,
-                        ),
+                        ),),
                       ),
                     ),
                   ],
@@ -114,14 +115,14 @@ class MiddleWidget extends StatelessWidget {
                         //color: boxColor,
                         borderRadius: BorderRadius.circular(borderRadConst - 5),
                       ),
-                      child: const Text(
-                        '1252',
+                      child:Obx(() => Text(
+                          controller.overallCards.value.toString(),
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: dashboardBox + 12,
                         ),
                         textAlign: TextAlign.center,
-                      ),
+                      ),),
                     ),
                   ),
                 ],

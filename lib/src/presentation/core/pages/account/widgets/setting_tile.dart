@@ -3,6 +3,7 @@ import 'package:a_few_words/src/presentation/core/pages/account/models/setting.d
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 
 class SettingTile extends StatelessWidget {
   final Setting setting;
@@ -14,7 +15,9 @@ class SettingTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {} , //navigation
+      onTap: () {
+        Get.toNamed(setting.route);
+      } , //navigation
       child: Row(
         children: [
           Container(

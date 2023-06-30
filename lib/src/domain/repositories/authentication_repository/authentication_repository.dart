@@ -3,6 +3,7 @@ import 'package:a_few_words/src/presentation/authentication/pages/login/login_pa
 import 'package:a_few_words/src/presentation/authentication/pages/welcome/welcome_page.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/dashboard_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:get/get.dart';
 
 class AuthenticationRepository extends GetxController {
@@ -25,11 +26,22 @@ class AuthenticationRepository extends GetxController {
         : Get.offAll(() => const DashboardPage());
   }
 
-  Future<void> createUserWithEmailAndPassword(String email, String password) async {
+  Future<UserCredential> signInWithGoogle() async {
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+    return await FirebaseAuth.instance.signInWithCredential(credential);
+  }
+
+  Future<void> createUserWithEmailAndPassword(
+      String email, String password) async {
     try {
       await _auth.createUserWithEmailAndPassword(
-          email: email, 
-          password: password);
+          email: email, password: password);
       firebaseUser.value != null
           ? Get.offAll(() => const DashboardPage())
           : Get.to(() => const WelcomePage());
@@ -46,9 +58,7 @@ class AuthenticationRepository extends GetxController {
 
   Future<void> loginWithEmailAndPassword(String email, String password) async {
     try {
-      await _auth.signInWithEmailAndPassword(
-        email: email, 
-        password: password);
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
       firebaseUser.value != null
           ? Get.offAll(() => const DashboardPage())
           : Get.to(() => const LoginPage());
@@ -58,8 +68,7 @@ class AuthenticationRepository extends GetxController {
       } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
       }
-    } catch (_) {
-    }
+    } catch (_) {}
   }
 
   Future<void> logout() async {

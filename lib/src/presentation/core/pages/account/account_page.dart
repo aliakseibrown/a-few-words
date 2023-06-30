@@ -1,4 +1,5 @@
 import 'package:a_few_words/src/domain/repositories/authentication_repository/authentication_repository.dart';
+import 'package:a_few_words/src/presentation/core/controllers/account_controller.dart';
 import 'package:a_few_words/src/presentation/core/pages/account/models/setting.dart';
 import 'package:a_few_words/src/presentation/core/pages/account/widgets/setting_tile.dart';
 import 'package:a_few_words/src/presentation/core/pages/home_bar/custom_navigation_bar.dart';
@@ -14,6 +15,7 @@ class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(AccountController());
     return Scaffold(
       backgroundColor: backgroundColor,
       body: SingleChildScrollView(
@@ -25,23 +27,23 @@ class AccountPage extends StatelessWidget {
               const SizedBox(
                 height: defaultSize * 4,
               ),
-              const Text(
-                'name',
-                style: TextStyle(
+              Obx(() =>  Text(
+                controller.currentUser.fullName,
+                style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 20,
                 ),
                 textAlign: TextAlign.center,
-              ),
-              const Text(
-                'email@gmail.com',
-                style: TextStyle(
+              ),),
+               Obx(() => Text(
+                controller.currentUser.email,
+                style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 15,
                   color: greyColor,
                 ),
                 textAlign: TextAlign.center,
-              ),
+              ),),
               const SizedBox(height: buttonHeight),
               SizedBox(
                 width: 110,

@@ -24,11 +24,8 @@ class FlashcardsPage extends StatelessWidget {
             Obx(() {
               return LinearBar(index: controller.index.value);
             }),
-            GetBuilder<FlashcardsController>(
-                init: FlashcardsController(),
-                global: false,
-                builder: (controller) {
-                  if (controller.index.value < controller.activeList.length) {
+            Obx(() {
+                  if (controller.index.value < controller.dailyMax) {
                     return Container(
                       padding: const EdgeInsets.all(defaultSize),
                       child: Column(
@@ -36,7 +33,7 @@ class FlashcardsPage extends StatelessWidget {
                         children: [
                           Flashcard(
                               sentence: controller
-                                  .activeList[controller.index.value]),
+                                  .newList[controller.index.value]),
                           const SizedBox(height: defaultSize * 5),
                           SizedBox(
                               width: 500,
@@ -44,7 +41,7 @@ class FlashcardsPage extends StatelessWidget {
                                 title: learn,
                                 onPressed: () {
                                   controller.checkWord(controller
-                                      .activeList[controller.index.value]
+                                      .newList[controller.index.value]
                                       .keyWord);
                                 },
                               )),
@@ -57,9 +54,10 @@ class FlashcardsPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                            padding: const EdgeInsets.all(buttonHeight),
+                            padding: const EdgeInsets.all(defaultSize),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(borderRadConst),
+                              borderRadius:
+                                  BorderRadius.circular(borderRadConst),
                               color: whiteColor,
                             ),
                             child: const Text(

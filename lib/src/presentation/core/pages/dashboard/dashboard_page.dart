@@ -1,3 +1,4 @@
+import 'package:a_few_words/src/presentation/core/controllers/dashboard_controller.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/bar_graph/widgets/bar_graph.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/widgets/header_widget.dart';
 import 'package:a_few_words/src/presentation/core/pages/dashboard/widgets/middle_widget.dart';
@@ -6,11 +7,13 @@ import 'package:a_few_words/src/presentation/core/pages/home_bar/custom_navigati
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(DashboardController());
     const List<double> week = [
       2.0,
       20.0,

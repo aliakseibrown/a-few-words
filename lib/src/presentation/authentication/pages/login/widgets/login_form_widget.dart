@@ -35,8 +35,9 @@ class LoginForm extends StatelessWidget {
               ),
             ),
             const SizedBox(height: formHeight,),
-            TextFormField( 
+            Obx(() =>  TextFormField( 
               controller: controller.password,
+              obscureText: controller.obscureTextPassword,
               decoration: const InputDecoration(
                 prefixIcon: Icon(IconlyBroken.password),
                 labelText: password,
@@ -46,7 +47,7 @@ class LoginForm extends StatelessWidget {
                   onPressed: null, 
                   icon: Icon(IconlyBroken.show)),
               ),
-            ),
+            ),),
             const SizedBox(height: formHeight,),
             Align(
               alignment: Alignment.centerRight,

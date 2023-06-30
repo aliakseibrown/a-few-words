@@ -1,7 +1,10 @@
+import 'package:a_few_words/src/presentation/core/controllers/dashboard_controller.dart';
+import 'package:a_few_words/src/presentation/core/controllers/review_controller.dart';
 import 'package:a_few_words/src/utils/constants/colors.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({
@@ -9,6 +12,7 @@ class HeaderWidget extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(DashboardController());
     return Container(
       height: 300.0,
       color: Colors.transparent,
@@ -78,15 +82,15 @@ class HeaderWidget extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: buttonHeight),
-                    const Text(
-                      hiuser,
-                      style: TextStyle(
+                    Obx(() =>Text(
+                      'Hello, ${controller.name.value}',
+                      style: const TextStyle(
                         color: whiteColor,
                         fontWeight: FontWeight.w700,
                         fontSize: headerText,
                       ),
                       textAlign: TextAlign.left,
-                    ),
+                    ),),
                     const SizedBox(height: buttonHeight*3-2),
                     // const Text(
                     //   study,
@@ -98,25 +102,6 @@ class HeaderWidget extends StatelessWidget {
                     //   textAlign: TextAlign.left,
                     // ),
                     const SizedBox(height: buttonHeight),
-                    // SizedBox(
-                    //   height: 45.0,
-                    //   width: 200.0,
-                    //   child: ElevatedButton(
-                    //     style: ElevatedButton.styleFrom(
-                    //       elevation: 0,
-                    //       shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(borderRadConst),
-                    //       ),
-                    //       foregroundColor: whiteColor,
-                    //       backgroundColor: primaryColor,
-                    //       //side: const BorderSide(color: secondaryColor),
-                    //       padding: const EdgeInsets.symmetric(
-                    //           vertical: buttonHeight),
-                    //     ),
-                    //     onPressed: () => Get.toNamed('/flashcards'),
-                    //     child: Text(learn.toUpperCase()),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),

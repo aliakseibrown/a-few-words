@@ -6,17 +6,31 @@ import 'package:get/get.dart';
 final userRepo = Get.put(UserRepository());
 
 class LoginController extends GetxController {
-  static LoginController get instance =>  Get.find();
+  static LoginController get instance => Get.find();
 
-
+  final RxBool _obscureTextPassword = true.obs;
   final showPassword = false.obs;
   final email = TextEditingController();
   final password = TextEditingController();
-  
+
+  get obscureTextPassword => _obscureTextPassword.value;
+
+  switchPassword() {
+    if (_obscureTextPassword.value) {
+      _obscureTextPassword.value = false;
+    } else {
+      _obscureTextPassword.value = true;
+    }
+  }
+
   void login() async {
     final auth = AuthenticationRepository.instance;
-    await auth.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+    await auth.loginWithEmailAndPassword( 
+        email.text.trim(), password.text.trim());
     //auth.setInitialPage(auth.firebaseUser.value);
   }
+  Future<void> googleSignIn() async {
+    final auth = AuthenticationRepository.instance;
+    await auth.signInWithGoogle();
+  }
 }
-

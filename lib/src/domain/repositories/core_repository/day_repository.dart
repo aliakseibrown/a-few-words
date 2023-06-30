@@ -9,23 +9,22 @@ class DayRepository extends GetxController {
   final _db = FirebaseFirestore.instance;
 
   updateDay(DayModel day, String email) async {
+    DateTime now = new DateTime.now();
+    DateTime date = new DateTime(now.year, now.month, now.day);
     await _db
         .collection('Users')
         .doc(email)
         .collection('UserCalendar')
-        .doc(day.date.toString())
+        .doc(date.toString())
         .set(day.toJson());
   }
 
-  Future<List<DayModel>> getLastWeek(int id) async {
-    final listOfId = [];
-    for (int i = id; i < id + 3; i++) {
-      listOfId.add(i);
-    }
+  Future<List<DayModel>> getLastWeek(String email) async {
     final snapshot = await _db
-        .collection("Sentences")
-        .where("id", whereIn: listOfId)
-        .limit(5)
+        .collection("Users")
+        .doc(email)
+        .collection('UserCalendar')
+        .limit(7)
         .get();
     final dayData = snapshot.docs.map((e) => DayModel.fromSnapshot(e)).toList();
     return dayData;
@@ -37,6 +36,34 @@ class DayRepository extends GetxController {
         .doc(email)
         .collection('UserCalendar')
         .where("Date", isEqualTo: date)
+        .get();
+    final dayData = snapshot.docs.map((e) => DayModel.fromSnapshot(e)).single;
+    return dayData;
+  }
+  Future<DayModel> getToday(String email) async {
+    DateTime now = new DateTime.now();
+    DateTime date = new DateTime(now.year, now.month, now.day);
+    Timestamp today = Timestamp.fromDate(date);
+    final snapshot = await _db
+        .collection('Users')
+        .doc(email)
+        .collection('UserCalendar')
+        .where("Date", isEqualTo: today)
+        .get();
+    final dayData = snapshot.docs.map((e) => DayModel.fromSnapshot(e)).single;
+    return dayData;
+  }
+
+  Future<DayModel> getYesterday(String email) async {
+    DateTime now = new DateTime.now();
+    DateTime date = new DateTime(now.year, now.month, now.day);
+    var yesteday = date.subtract(Duration(days: 1));
+    Timestamp myTimeStamp = Timestamp.fromDate(yesteday);
+    final snapshot = await _db
+        .collection('Users')
+        .doc(email)
+        .collection('UserCalendar')
+        .where("Date", isEqualTo: myTimeStamp)
         .get();
     final dayData = snapshot.docs.map((e) => DayModel.fromSnapshot(e)).single;
     return dayData;

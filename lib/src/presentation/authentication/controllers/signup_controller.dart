@@ -24,20 +24,23 @@ class SignUpController extends GetxController {
   switchPassword() {
     if (_obscureTextPassword.value) {
       _obscureTextPassword.value = false;
-    }else {_obscureTextPassword.value = true;}
+    } else {
+      _obscureTextPassword.value = true;
+    }
   }
 
   switchRepeatPassword() {
     if (_obscureTextRepeatPassword.value) {
       _obscureTextRepeatPassword.value = false;
-    }else {
+    } else {
       _obscureTextRepeatPassword.value = true;
     }
   }
-  checkPasswords(){
-    if(password.text.trim() != repeatPassword.text.trim()){
+
+  checkPasswords() {
+    if (password.text.trim() != repeatPassword.text.trim()) {
       Get.snackbar('Try again', 'The passwords are not matching');
-    }else{
+    } else {
       createUser();
     }
   }
@@ -54,7 +57,23 @@ class SignUpController extends GetxController {
 
     //final uid = auth.firebaseUser.value?.uid;
     await auth.createUserWithEmailAndPassword(user.email, user.password);
-    userRepo.createUser(user);
+    await userRepo.createUser(user);
     //auth.setInitialPage(auth.firebaseUser.value);
+  }
+
+  Future<void> gogoleSignIn() async {
+    final auth = AuthenticationRepository.instance;
+    if (email.text.trim() == '') {
+      Get.snackbar('Error', 'Write Email');
+    } else {
+      final user = UserModel(
+        email: email.text.trim(),
+        password: ' ',
+        fullName: 'User',
+        enteredOn: Timestamp.now(),
+        createdOn: Timestamp.now(),
+      );
+      await auth.signInWithGoogle();
+    }
   }
 }
