@@ -27,6 +27,9 @@ class AccountController extends GetxController {
 
   get obscureTextPassword => _obscureTextPassword.value;
   get obscureTextRepeatPassword => _obscureTextRepeatPassword.value;
+  final RxString nameString = ''.obs;
+  final RxString emailString = ''.obs;
+  late final UserModel user;
 
   final GetStorage _storage = GetStorage();
   late Rx<UserModel> _currentUser;
@@ -34,8 +37,18 @@ class AccountController extends GetxController {
   late DayModel yesterday;
   var storedUser;
 
+  Future<UserModel> getNameEmail() async{
+    final email = _authRepo.firebaseUser.value?.email;
+    user = await _userRepo.getUserDetails(email!);
+    nameString.value = user.fullName;
+    emailString.value = user.email;
+    return user;
+  }
   @override
+
   void onReady() {
+    getNameEmail();
+    updateUser();
     readUser();
     Future.delayed(const Duration(seconds: 3));
     super.onInit();
@@ -82,9 +95,9 @@ class AccountController extends GetxController {
 
   Future<UserModel> getUser() async {
     final email = _authRepo.firebaseUser.value?.email;
-    _currentUser.value = await _userRepo.getUserDetails(email!);
+    _currentUser.value = await _userRepo.getUserDetails(email!) as UserModel;
     String keyUser = 'User_$email';
-    _storage.write(keyUser, _currentUser.value);
+    _storage.write(keyUser, _currentUser);
     return _currentUser.value;
   }
 
@@ -103,7 +116,7 @@ class AccountController extends GetxController {
     final email = _authRepo.firebaseUser.value?.email;
     String keyUser = 'User_$email';
     if (_currentUser.value.email != email!) {
-      _currentUser.value = _storage.read(keyUser);
+      _currentUser = _storage.read(keyUser);
     } else {
       getUser();
     }

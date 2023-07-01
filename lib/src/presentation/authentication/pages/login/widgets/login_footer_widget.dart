@@ -1,3 +1,4 @@
+import 'package:a_few_words/src/presentation/authentication/controllers/login_controller.dart';
 import 'package:a_few_words/src/utils/constants/images.dart';
 import 'package:a_few_words/src/utils/constants/sizes.dart';
 import 'package:a_few_words/src/utils/constants/text_strings.dart';
@@ -12,6 +13,7 @@ class LoginFooterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -28,7 +30,9 @@ class LoginFooterWidget extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: buttonHeight),
                   ),
             icon: const Image(image: AssetImage(googleImage), width: 20.0),
-            onPressed: () {},
+            onPressed: () {
+              controller.googleSignIn();
+            },
             label: const Text(signInWithGoogle),
             ),
         ),

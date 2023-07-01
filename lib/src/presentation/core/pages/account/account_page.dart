@@ -28,7 +28,7 @@ class AccountPage extends StatelessWidget {
                 height: defaultSize * 4,
               ),
               Obx(() =>  Text(
-                controller.currentUser.fullName,
+                controller.nameString.value,
                 style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 20,
@@ -36,7 +36,7 @@ class AccountPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),),
                Obx(() => Text(
-                controller.currentUser.email,
+                controller.emailString.value,
                 style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 15,

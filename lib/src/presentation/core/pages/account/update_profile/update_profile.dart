@@ -26,7 +26,7 @@ class UpdateProfilePage extends StatelessWidget {
                 height: defaultSize * 4,
               ),
               Obx(() => Text(
-                controller.currentUser.fullName,
+                controller.nameString.value,
                 style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 20,
@@ -34,7 +34,7 @@ class UpdateProfilePage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),),
               Obx(() => Text(
-                controller.currentUser.email,
+                controller.emailString.value,
                 style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 15,
@@ -53,7 +53,7 @@ class UpdateProfilePage extends StatelessWidget {
                     ),
                     Obx(() => TextFormField(
                       controller: controller.name,
-                      initialValue: controller.currentUser.fullName,
+                      // initialValue: controller.currentUser.fullName,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(IconlyBroken.profile),
                         labelText: name,
@@ -66,7 +66,7 @@ class UpdateProfilePage extends StatelessWidget {
                     ),
                     Obx(() => TextFormField(
                       controller: controller.email,
-                      initialValue: controller.currentUser.email,
+                      // initialValue: controller.currentUser.email,
                       decoration: const InputDecoration(
                           prefixIcon: Icon(IconlyBroken.message),
                           labelText: email,

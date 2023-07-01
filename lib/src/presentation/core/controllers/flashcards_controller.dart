@@ -41,16 +41,17 @@ class FlashcardsController extends GetxController {
 
   @override
   void onReady() {
-    if(overall.value == 0) {
-      getYesterday();
-    }
-    index.value = 0;
-    if (_lastNewID.value == 0) {
-      _lastNewID.value = _storage.read(keyNewID);
-    }
+    // if(overall.value == 0) {
+    //   getYesterday();
+    // }
+    // index.value = 0;
+    // if (_lastNewID.value == 0) {
+    //   _lastNewID.value = _storage.read(keyNewID);
+    // }
     Future.delayed(const Duration(seconds: 3));
     super.onInit();
-    getNewSentences();
+    getActiveSentences();
+    //getNewSentences();
     //_activeList.value  = getNewSentences() as List<SentenceModel>;
     //getActiveSentences();
     // _forgottenList = getForgottenSentences();
@@ -63,7 +64,7 @@ class FlashcardsController extends GetxController {
     print(word.text);
     print(index);
     if (word.text == keyWord) {
-      if (index.value < newList.length) {
+      if (index.value < activeList.length) {
         uploadUserSentence();
         overall.value = overall.value + index.value;
         uploadDay();
@@ -72,7 +73,6 @@ class FlashcardsController extends GetxController {
         _lastNewID.value++;
         _storage.write(keyNewID, _lastNewID.value);
       } else {
-        index.value = 0;
         getActiveSentences();
         Get.snackbar("Good", "See you tomorrow");
       }
@@ -131,9 +131,9 @@ class FlashcardsController extends GetxController {
     final email = _authRepo.firebaseUser.value?.email;
     final key = 'sentencesUser_forgottenList_$email';
     sentencesList.value = await _sentenceRepo.getForgottenSentences(email!);
-    // if (sentencesList.isNotEmpty) {
-    //   _storage.write(key, sentencesList.value);
-    // }
+    if (sentencesList.isNotEmpty) {
+      _storage.write(key, sentencesList.value);
+    }
     // _forgottenList.value = _storage.read(key);
     _forgottenList.value = sentencesList.value;
     return _forgottenList.value;
@@ -143,25 +143,31 @@ class FlashcardsController extends GetxController {
     final email = _authRepo.firebaseUser.value?.email;
     final key = 'sentences_newList_$email';
     sentencesList.value = await _sentenceRepo.getNewSentences(0, 10);
-    // if (sentencesList.isNotEmpty) {
-    //   _storage.write(key, sentencesList.value);
-    // }
-    // _newList.value = _storage.read(key);
+    if (sentencesList.isNotEmpty) {
+      _storage.write(key, sentencesList.value);
+    }
+    _newList.value = _storage.read(key);
     _newList.value = sentencesList.value;
     return _newList.value;
   }
 
   Future<List<SentenceModel>> getActiveSentences() async {
-    index.value = 0;
-    getForgottenSentences();
-    if (_forgottenList.value != []) {
-      print('_forgottenList is NOT EMPTY');
+    
+    if(index.value >= _activeList.value.length){
+      getForgottenSentences();
       _activeList.value = _forgottenList;
-    } else {
+    }else{
       getNewSentences();
-      print('_forgottenList is EMPTY');
       _activeList.value = _newList;
     }
+    // if (_forgottenList.value != []) {
+    //   print('_forgottenList is NOT EMPTY');
+    //   _activeList.value = _forgottenList;
+    // } else {
+    //   getNewSentences();
+    //   print('_forgottenList is EMPTY');
+    //   _activeList.value = _newList;
+    // }
     return _activeList;
   }
 
