@@ -1,6 +1,6 @@
 # A Few Words
 An application for learning a new language with a Space Repetition method. Written on Dart.
-Language Learning App.A sentence with a missing word is presented in the app and the goal is to complete the sentence by writing the missing word. An only hint is a the translation of the word. 
+A sentence with a missing word is presented in the app and the goal is to complete the sentence by writing the missing word. An only hint is a the translation of the word. 
 #
 The application connected to the Firebase. Authorisation methods and fetching the new sentences and posting the sentences that should be repeated after some time.
 The new sentences  are taken from the Firebase 'Sentences" and after completing them they will be recorded in the "UserSentence". The date is updated and regarding to the Repetition scale (5 orange circles near the sentence) the new time for next repetition will be updated under the flashcard and recorded/updated into User database.
